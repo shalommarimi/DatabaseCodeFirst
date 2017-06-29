@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUD\Test\DeleteDepartment.cs" />
+    <Compile Include="CRUD\Test\InsertDepartment.cs" />
+    <Compile Include="CRUD\Test\UpdateDepartment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
