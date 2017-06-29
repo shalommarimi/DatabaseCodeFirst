@@ -1,11 +1,11 @@
 ﻿
+using Dataaccess;
 using System.Data.Entity;
 namespace DAL.DBContext
 {
     class UsersDbContext : DbContext
     {
-        public class UsersDBContext : DbContext
-        {
+     
 
             //public virtual DbSet<User> users { get; set; }
             //public virtual DbSet<Department> departments { get; set; }
@@ -18,6 +18,5 @@ namespace DAL.DBContext
             public virtual DbSet<UserType> userTypes { get; set; }
             public virtual DbSet<City> cities { get; set; }
 
-        }
     }
 }
