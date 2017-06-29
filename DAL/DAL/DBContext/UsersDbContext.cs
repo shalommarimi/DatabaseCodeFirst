@@ -1,6 +1,7 @@
 ﻿
 using Dataaccess;
 using DataAccessLayer.DomainClasses;
+using ProvinceCity;
 using System.Data.Entity;
 namespace DAL.DBContext
 {

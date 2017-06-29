@@ -1,5 +1,6 @@
 ﻿
 
+using DataAccessLayer.DomainClasses;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
