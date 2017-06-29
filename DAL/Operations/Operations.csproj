@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUD\InsertDepartment.cs" />
     <Compile Include="CRUD\PhysicalAddress\InsertPhysicalAddress.cs" />
     <Compile Include="CRUD\Test\DeleteDepartment.cs" />
     <Compile Include="CRUD\Test\InsertDepartment.cs" />
