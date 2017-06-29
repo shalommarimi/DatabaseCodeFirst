@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.DBContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,9 @@ namespace Operations
     {
         static void Main(string[] args)
         {
+
+            var _ObjInsertPhysicalAddress = new InsertPhysicalAddress();
+            _ObjInsertPhysicalAddress.EnterPhysicalAddressDetails();
         }
     }
 }
