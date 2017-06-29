@@ -5,7 +5,7 @@ using ProvinceCity;
 using System.Data.Entity;
 namespace DAL.DBContext
 {
-    class UsersDbContext : DbContext
+   public class UsersDbContext : DbContext
     {
 
 

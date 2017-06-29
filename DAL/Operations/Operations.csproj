@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUD\PhysicalAddress\InsertPhysicalAddress.cs" />
     <Compile Include="CRUD\Test\DeleteDepartment.cs" />
     <Compile Include="CRUD\Test\InsertDepartment.cs" />
     <Compile Include="CRUD\Test\UpdateDepartment.cs" />
@@ -63,9 +66,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CRUD\PhysicalAddress\" />
     <Folder Include="CRUD\PostalAddress\" />
     <Folder Include="CRUD\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{c2e25823-9b0c-4d63-b6ec-0e31403d3c33}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

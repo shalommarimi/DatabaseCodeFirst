@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
-
+using Dataaccess;
 
 namespace DataAccessLayer.DomainClasses
 {
@@ -24,6 +24,9 @@ namespace DataAccessLayer.DomainClasses
         public Department FK_DepartmentId { get; set; }
         public Gender FK_GenderId { get; set; }
         public UserType FK_UserTypeId { get; set; }
+
+        public List<Physical_Address> PhysicalAddress { get; set; }
+        public List<Postal_Address> PostalAddress { get; set; }
 
     }
 }
