@@ -20,7 +20,7 @@ namespace DataAccessLayer.DomainClasses
         //Foreign keys
 
         public int FK_DepartmentId { get; set; }
-        [ForeignKey("FK_ DepartmentId")]
+        [ForeignKey("FK_DepartmentId")]
         public Department Department { get; set; }
 
 

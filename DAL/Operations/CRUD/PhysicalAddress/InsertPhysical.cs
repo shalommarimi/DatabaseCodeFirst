@@ -5,7 +5,7 @@ using System;
 
 namespace Operations.CRUD.PhysicalAddress
 {
-    class InsertPhysicalAddress
+    class InsertPhysical
     {
 
 
@@ -28,7 +28,7 @@ namespace Operations.CRUD.PhysicalAddress
                     };
                     _ObjUsersDBContext.physicalAddress.Add(_ObjPhysicalAddress);
                     _ObjUsersDBContext.SaveChanges();
-                    Console.WriteLine("An Address for User Id " + FK_UserId + " has beed added.");
+                    Console.WriteLine("An Physical Address for User Id " + FK_UserId + " has beed added.");
                     Console.ReadKey();
                 }
                 catch (Exception)
@@ -68,7 +68,7 @@ namespace Operations.CRUD.PhysicalAddress
 
             Console.WriteLine("\r\n");
 
-            var _ObjInsertPhysicalAddress = new InsertPhysicalAddress();
+            var _ObjInsertPhysicalAddress = new InsertPhysical();
             _ObjInsertPhysicalAddress.Insert_PhysicalAddress(streetLine1, streetLine2, streetLine3, FK_UserId, FK_SuburbId);
 
         }
