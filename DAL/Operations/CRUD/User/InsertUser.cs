@@ -11,7 +11,11 @@ namespace Operations.CRUD.User
             {
                 try
                 {
-                   var user = new _User();
+                    var user = new _User
+                    {
+                        FirstName = "You are an idiot Giraffe"
+
+                   };
                 }
                 catch (System.Exception)
                 {
