@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="CRUD\InsertDepartment.cs" />
     <Compile Include="CRUD\PhysicalAddress\InsertPhysicalAddress.cs" />
+    <Compile Include="CRUD\User\InsertUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,9 +64,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CRUD\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{c2e25823-9b0c-4d63-b6ec-0e31403d3c33}</Project>

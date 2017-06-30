@@ -14,6 +14,6 @@ namespace DataAccessLayer.DomainClasses
         public int PK_GenderId { get; set; }
         public string GenderValue { get; set; }
         //referencing the user table
-        public List<User> user { get; set; }
+        public List<_User> user { get; set; }
     }
 }

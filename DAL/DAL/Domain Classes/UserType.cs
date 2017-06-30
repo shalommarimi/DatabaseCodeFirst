@@ -14,6 +14,6 @@ namespace DataAccessLayer.DomainClasses
         public int UserTypeId { get; set; }
         public string UserTypeName { get; set; }
 
-        public List<User> user { get; set; }
+        public List<_User> user { get; set; }
     }
 }

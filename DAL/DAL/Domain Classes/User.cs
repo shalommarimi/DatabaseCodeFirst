@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.DomainClasses
 {
-    public class User
+    public class _User
     {
         [Key]
         public int PK_UserId { get; set; }
@@ -19,8 +19,8 @@ namespace DataAccessLayer.DomainClasses
         public bool IsDeleted { get; set; }
         //Foreign keys
 
-        public int FK_UserId { get; set; }
-        [ForeignKey("FK_UserId")]
+        public int FK_DepartmentId { get; set; }
+        [ForeignKey("FK_ DepartmentId")]
         public Department Department { get; set; }
 
 

@@ -20,7 +20,7 @@ namespace DataAccessLayer.DomainClasses
 
         public int FK_UserId { get; set; }
         [ForeignKey("FK_UserId")]
-        public User User { get; set; }
+        public _User User { get; set; }
 
 
         public int FK_SuburbId { get; set; }

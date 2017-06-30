@@ -9,7 +9,7 @@ namespace DAL.DBContext
     {
 
 
-        public virtual DbSet<User> user { get; set; }
+        public virtual DbSet<_User> user { get; set; }
         public virtual DbSet<Department> department { get; set; }
         public virtual DbSet<Gender> gender { get; set; }
         public virtual DbSet<Physical_Address> physicalAddress { get; set; }
