@@ -1,7 +1,7 @@
 ﻿
-using Dataaccess;
+
+using DAL.Domain_Classes;
 using DataAccessLayer.DomainClasses;
-using ProvinceCity;
 using System.Data.Entity;
 namespace DAL.DBContext
 {
@@ -9,16 +9,16 @@ namespace DAL.DBContext
     {
 
 
-        public virtual DbSet<User> users { get; set; }
-        public virtual DbSet<Department> departments { get; set; }
-        public virtual DbSet<Gender> genders { get; set; }
-        public virtual DbSet<Physical_Address> physicalAddresses { get; set; }
-        public virtual DbSet<Postal_Address> postalAddresses { get; set; }
-        public virtual DbSet<Postal_Code> postalCodes { get; set; }
-        public virtual DbSet<Province> provinces { get; set; }
-        public virtual DbSet<Suburb> suburbs { get; set; }
-        public virtual DbSet<UserType> userTypes { get; set; }
-        public virtual DbSet<City> cities { get; set; }
+        public virtual DbSet<User> user { get; set; }
+        public virtual DbSet<Department> department { get; set; }
+        public virtual DbSet<Gender> gender { get; set; }
+        public virtual DbSet<Physical_Address> physicalAddress { get; set; }
+        public virtual DbSet<Postal_Address> postalAddress { get; set; }
+        public virtual DbSet<Postal_Code> postalCode { get; set; }
+        public virtual DbSet<Province> province { get; set; }
+        public virtual DbSet<Suburb> suburb { get; set; }
+        public virtual DbSet<UserType> userType{ get; set; }
+        public virtual DbSet<City> city { get; set; }
 
     }
 }

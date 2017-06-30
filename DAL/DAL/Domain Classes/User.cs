@@ -1,11 +1,8 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
-using Dataaccess;
+using DAL.Domain_Classes;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.DomainClasses
 {
@@ -21,9 +18,19 @@ namespace DataAccessLayer.DomainClasses
         public bool IsApproved { get; set; }
         public bool IsDeleted { get; set; }
         //Foreign keys
-        public Department FK_DepartmentId { get; set; }
-        public Gender FK_GenderId { get; set; }
-        public UserType FK_UserTypeId { get; set; }
+
+        public int FK_UserId { get; set; }
+        [ForeignKey("FK_UserId")]
+        public Department Department { get; set; }
+
+
+        public int FK_GenderId { get; set; }
+        [ForeignKey("FK_GenderId")]
+        public Gender Gender { get; set; }
+
+        public int FK_UserTypeId { get; set; }
+        [ForeignKey("FK_UserTypeId")]
+        public UserType UserType { get; set; }
 
         public List<Physical_Address> PhysicalAddress { get; set; }
         public List<Postal_Address> PostalAddress { get; set; }

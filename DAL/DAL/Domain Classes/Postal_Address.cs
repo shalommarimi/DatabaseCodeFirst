@@ -3,11 +3,12 @@ using DataAccessLayer.DomainClasses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dataaccess
+namespace DataAccessLayer.DomainClasses
 {
     public class Postal_Address
     {
@@ -16,7 +17,14 @@ namespace Dataaccess
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string AddressLine3 { get; set; }
-        public User FK_UserId { get; set; }
-        public Suburb FK_SuburbId { get; set; }
+
+        public int FK_UserId { get; set; }
+        [ForeignKey("FK_UserId")]
+        public User User { get; set; }
+
+
+        public int FK_SuburbId { get; set; }
+        [ForeignKey("FK_SuburbId")]
+        public Suburb Suburb { get; set; }
     }
 }

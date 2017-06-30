@@ -1,8 +1,9 @@
-﻿using Dataaccess;
+﻿using DAL.DBContext;
+using DAL.Domain_Classes;
 using System;
 
 
-namespace DAL.DBContext
+namespace Operations.CRUD.PhysicalAddress
 {
     class InsertPhysicalAddress
     {
@@ -25,7 +26,7 @@ namespace DAL.DBContext
                         FK_UserId = FK_UserId
 
                     };
-                    _ObjUsersDBContext.physicalAddresses.Add(_ObjPhysicalAddress);
+                    _ObjUsersDBContext.physicalAddress.Add(_ObjPhysicalAddress);
                     _ObjUsersDBContext.SaveChanges();
                     Console.WriteLine("An Address for User Id " + FK_UserId + " has beed added.");
                     Console.ReadKey();

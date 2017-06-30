@@ -1,13 +1,13 @@
-﻿
-
-using DataAccessLayer.DomainClasses;
+﻿using DataAccessLayer.DomainClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace Dataaccess
+namespace DAL.Domain_Classes
 {
     public class Physical_Address
     {

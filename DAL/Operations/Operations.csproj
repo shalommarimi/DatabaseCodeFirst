@@ -56,9 +56,6 @@
   <ItemGroup>
     <Compile Include="CRUD\InsertDepartment.cs" />
     <Compile Include="CRUD\PhysicalAddress\InsertPhysicalAddress.cs" />
-    <Compile Include="CRUD\Test\DeleteDepartment.cs" />
-    <Compile Include="CRUD\Test\InsertDepartment.cs" />
-    <Compile Include="CRUD\Test\UpdateDepartment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,7 +64,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CRUD\PostalAddress\" />
     <Folder Include="CRUD\User\" />
   </ItemGroup>
   <ItemGroup>

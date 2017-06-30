@@ -41,7 +41,7 @@ namespace Operations.CRUD
                         DepartmentName = _departmentName,
                         DepartmentDescription = _departmentDescription
                     };
-                    usersDBContext.departments.Add(_Objdepartment);
+                    usersDBContext.department.Add(_Objdepartment);
                     usersDBContext.SaveChanges();
                     Console.WriteLine(" A new Department has been inserted");
                     Console.ReadKey();

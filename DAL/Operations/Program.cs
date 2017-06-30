@@ -2,9 +2,7 @@
 using Operations.CRUD;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Operations
 {
@@ -18,6 +16,9 @@ namespace Operations
 
             var _ObjInsertDepartment = new InsertDepartment();
             _ObjInsertDepartment.EntertDepartmentDetails();
+
+            //var _ObjInsertPostalAddress = new InsertPostalAddress();
+            //_ObjInsertPostalAddress.EnterPostalAddressDetails();
         }
     }
 }

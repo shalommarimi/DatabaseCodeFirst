@@ -1,12 +1,9 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Dataaccess
+using System.ComponentModel.DataAnnotations;
+
+
+namespace DataAccessLayer.DomainClasses
 {
     public class Postal_Code
     {

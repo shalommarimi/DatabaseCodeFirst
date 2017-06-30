@@ -1,4 +1,4 @@
-﻿using ProvinceCity;
+﻿using DAL.Domain_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dataaccess
+namespace DataAccessLayer.DomainClasses
 {
     public class Suburb
     {
