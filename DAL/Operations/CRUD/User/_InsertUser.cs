@@ -3,7 +3,7 @@ using DataAccessLayer.DomainClasses;
 
 namespace Operations.CRUD.User
 {
-    class InsertUser
+    class _InsertUser
     {
         public void Insert_User()
         {
