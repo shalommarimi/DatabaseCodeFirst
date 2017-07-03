@@ -61,7 +61,6 @@ namespace Operations.CRUD.User
             Console.WriteLine("Enter the last name :");
             string userLastName = Console.ReadLine();
 
-
             Console.WriteLine("Enter the email addres:");
             string userEmailAddress = Console.ReadLine();
 
