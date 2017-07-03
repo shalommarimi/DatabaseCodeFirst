@@ -1,7 +1,6 @@
 ﻿using DAL.DBContext;
 using Operations.CRUD;
 using Operations.CRUD.PhysicalAddress;
-using Operations.CRUD.User;
 using System;
 
 
@@ -21,7 +20,7 @@ namespace Operations
             switch (option)
             {
                 case 1:
-                    var _ObjInsertUser = new InsertUser();
+                   // var _ObjInsertUser = new InsertUser();
                   //  _ObjInsertUser.EnterUserDetails();
 
 
