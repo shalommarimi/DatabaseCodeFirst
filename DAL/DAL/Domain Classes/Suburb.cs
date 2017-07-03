@@ -15,8 +15,8 @@ namespace DataAccessLayer.DomainClasses
         public string SuburbName { get; set; }
         public City FK_CityId { get; set; }
 
-        public List<Postal_Address> PostalAddress {get;set;}
-        public List<Physical_Address> PhysicalAddress { get; set; }
-        public List<Postal_Code> PostalCode { get; set; }
+        public ICollection<Postal_Address> PostalAddress {get;set;}
+        public ICollection<Physical_Address> PhysicalAddress { get; set; }
+        public ICollection<Postal_Code> PostalCode { get; set; }
     }
 }

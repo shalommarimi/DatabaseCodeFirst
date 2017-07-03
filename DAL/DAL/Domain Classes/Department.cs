@@ -15,6 +15,6 @@ namespace DataAccessLayer.DomainClasses
         public string DepartmentName { get; set; }
         public string DepartmentDescription { get; set; }
 
-        public List<_User> user { get; set; }
+        public ICollection<_User> user { get; set; }
     }
 }

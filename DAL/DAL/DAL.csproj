@@ -60,7 +60,7 @@
     <Compile Include="Domain Classes\Postal_Code.cs" />
     <Compile Include="Domain Classes\Province.cs" />
     <Compile Include="Domain Classes\Suburb.cs" />
-    <Compile Include="Domain Classes\User.cs" />
+    <Compile Include="Domain Classes\_User.cs" />
     <Compile Include="Domain Classes\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

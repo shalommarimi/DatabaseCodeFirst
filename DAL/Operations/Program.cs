@@ -33,6 +33,8 @@ namespace Operations
                     _ObjInsertPhysical.EnterPhysicalAddressDetails();
                     break;
                 case 5:
+                    var _ObjUpdatePhysical = new UpdatePhysical();
+                    _ObjUpdatePhysical.EnterPhysicalUpdateDetails();
                     break;
                 case 6:
                     break;
@@ -46,7 +48,7 @@ namespace Operations
                     Console.WriteLine("Opps! Invalid option entered. Retry");
                     break;
             }
-           
+
 
             //var _ObjInsertDepartment = new InsertDepartment();
             //_ObjInsertDepartment.EntertDepartmentDetails();

@@ -47,6 +47,8 @@ namespace Operations.CRUD.PhysicalAddress
         public void EnterPhysicalAddressDetails()
         {
 
+            Console.WriteLine("Please enter User-ID");
+            int FK_UserId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter StreetLine 1");
             string streetLine1 = Console.ReadLine();
@@ -60,12 +62,7 @@ namespace Operations.CRUD.PhysicalAddress
             Console.WriteLine("Please enter Suburb-ID");
             int FK_SuburbId = Convert.ToInt32(Console.ReadLine());
 
-
-            Console.WriteLine("Please enter User-ID");
-            int FK_UserId = Convert.ToInt32(Console.ReadLine());
-
-
-
+            
             Console.WriteLine("\r\n");
 
             var _ObjInsertPhysicalAddress = new InsertPhysical();
