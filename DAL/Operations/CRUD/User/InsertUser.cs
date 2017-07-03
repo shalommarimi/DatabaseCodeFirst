@@ -32,9 +32,6 @@ namespace Operations.CRUD.User
                         FK_GenderId = userGenderId,
                         FK_UserTypeId = usertypeId
 
-
-
-
                     };
 
                     _ObjUsersDBContext.user.Add(_ObjUser);

@@ -40,6 +40,8 @@ namespace Operations
                     _ObjUpdatePhysical.EnterPhysicalUpdateDetails();
                     break;
                 case 6:
+                    var _ObjInsertDepartment = new InsertDepartment();
+                    _ObjInsertDepartment.EntertDepartmentDetails();
                     break;
                 case 7:
                     break;
