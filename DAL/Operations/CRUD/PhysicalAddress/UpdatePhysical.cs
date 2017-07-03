@@ -17,7 +17,7 @@ namespace Operations.CRUD.PhysicalAddress
             {
                 try
                 {
-                    var _ObjUpdatePhysical = new Physical_Address { };
+                    var _ObjUpdatePhysical = new Physical_Address();
 
 
                     _ObjUpdatePhysical = usersDBContext.physicalAddress.SingleOrDefault(x => x.PK_PhysicalAddessId == PK_PhysicalId);

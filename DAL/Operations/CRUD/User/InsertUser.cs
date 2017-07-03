@@ -37,6 +37,7 @@ namespace Operations.CRUD.User
                     _ObjUsersDBContext.user.Add(_ObjUser);
                     _ObjUsersDBContext.SaveChanges();
                     Console.WriteLine("New user has been created ");
+                    Console.WriteLine("Would you like to add your Physical Address? Y/N");
                     Console.ReadKey();
                 }
 
