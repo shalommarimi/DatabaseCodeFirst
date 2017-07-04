@@ -53,6 +53,8 @@ namespace Operations
                     _ObjInsertPostal.EnterPostalAddressDetails();
                     break;
                 case 8:
+                    var _ObjUpdatePostal = new UpdatePostal();
+                    _ObjUpdatePostal.EnterPostalUpdateDetails();
                     break;
                 case 10:
                     var _ObjUpdateApprovalStatus = new UpdateApprovalStatus();
