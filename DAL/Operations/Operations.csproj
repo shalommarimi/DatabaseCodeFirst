@@ -58,6 +58,7 @@
     <Compile Include="CRUD\PhysicalAddress\InsertPhysical.cs" />
     <Compile Include="CRUD\PhysicalAddress\UpdatePhysical.cs" />
     <Compile Include="CRUD\User\InsertUser.cs" />
+    <Compile Include="CRUD\User\UpdateUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

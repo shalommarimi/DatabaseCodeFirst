@@ -49,6 +49,7 @@ namespace Operations.CRUD.User
                 {
 
                     Console.WriteLine("Could not create user ");
+                    Console.ReadKey();
                 }
             }
         }

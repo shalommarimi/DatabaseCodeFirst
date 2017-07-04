@@ -24,7 +24,8 @@ namespace Operations.CRUD.PhysicalAddress
                     _ObjUpdatePhysical.StreetLine1 = streetLine1;
                     _ObjUpdatePhysical.StreetLine2 = streetLine2;
                     _ObjUpdatePhysical.StreetLine3 = streetLine3;
-                      
+                    _ObjUpdatePhysical.FK_SuburbId = FK_SuburbId;
+                          
 
                 usersDBContext.SaveChanges();
                 Console.WriteLine("Physical Address Updated");
