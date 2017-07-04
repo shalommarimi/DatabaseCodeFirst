@@ -14,6 +14,9 @@ namespace DataAccessLayer.DomainClasses
     {
         [Key]
         public int PK_PostalAddressId { get; set; }
+
+        [Required]
+        [StringLength(100, MinimumLength = 2)]
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string AddressLine3 { get; set; }

@@ -10,14 +10,32 @@ namespace DataAccessLayer.DomainClasses
     {
         [Key]
         public int PK_UserId { get; set; }
+
+        [Required]
+        [RegularExpression("^[a-zA-Z][a-zA-Z\\s]+$")]// No numerics are allowed
+        [StringLength(100, MinimumLength = 2)]
         public string FirstName { get; set; }
+
+        [RegularExpression("^[a-zA-Z][a-zA-Z\\s]+$")]
         public string MiddleName { get; set; }
+
+        [Required]
+        [StringLength(100, MinimumLength = 2)]
+        [RegularExpression("^[a-zA-Z][a-zA-Z\\s]+$")]
         public string LastName { get; set; }
+
+        [Required]
+        [StringLength(100, MinimumLength = 2)]
+        [EmailAddress]
         public string EmailAddress { get; set; }
+
+        [Required]
+        [MaxLength(300)]
         public string Password { get; set; }
+
         public bool IsApproved { get; set; }
         public bool IsDeleted { get; set; }
-        //Foreign keys
+
 
         public int FK_DepartmentId { get; set; }
         [ForeignKey("FK_DepartmentId")]

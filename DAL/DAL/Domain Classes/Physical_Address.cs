@@ -13,7 +13,11 @@ namespace DAL.Domain_Classes
     {
         [Key]
         public int PK_PhysicalAddessId { get; set; }
+        [Required]
+        [StringLength(100, MinimumLength = 2)]
         public string StreetLine1 { get; set; }
+
+
         public string StreetLine2 { get; set; }
         public string StreetLine3 { get; set; }
 
