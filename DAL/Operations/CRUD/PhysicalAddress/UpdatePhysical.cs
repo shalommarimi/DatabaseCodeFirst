@@ -25,11 +25,10 @@ namespace Operations.CRUD.PhysicalAddress
                     _ObjUpdatePhysical.StreetLine1 = streetLine1;
                     _ObjUpdatePhysical.StreetLine2 = streetLine2;
                     _ObjUpdatePhysical.StreetLine3 = streetLine3;
-<<<<<<< HEAD
+
                     _ObjUpdatePhysical.FK_SuburbId = FK_SuburbId;
                           
-=======
->>>>>>> 236115fbc2defa104d16e4ea246eb51d7f0cf9bd
+
 
 
                     usersDBContext.SaveChanges();

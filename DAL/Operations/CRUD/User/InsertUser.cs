@@ -51,7 +51,6 @@ namespace Operations.CRUD.User
                 }
 
 
-
                 catch (Exception)
                 {
 

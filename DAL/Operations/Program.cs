@@ -1,6 +1,7 @@
 ﻿using DAL.DBContext;
 using Operations.CRUD;
 using Operations.CRUD.PhysicalAddress;
+using Operations.CRUD.PostalAddress;
 using Operations.CRUD.User;
 using System;
 
@@ -11,7 +12,7 @@ namespace Operations
     {
         static void Main(string[] args)
         {
-            
+
             Console.WriteLine("Main Menu \r\n  \r\n User Operations: \r\n 0. See Registered Users \r\n 1. Register User  \r\n 2. Update User  \r\n 3. Delete User \r\n");
             Console.WriteLine("Physical Address Operations: \r\n 4. Enter User Physical Address  \r\n 5. Update User Physical Address  \r\n 6. Delete Physical Address \r\n");
             Console.WriteLine("Postal Address Operations: \r\n 7. Enter User Postal Address  \r\n 8. Update User Postal Address  \r\n 9. Delete Postal Address \r\n");
@@ -30,6 +31,8 @@ namespace Operations
                     break;
 
                 case 2:
+                    var _ObjUpdateUser = new UpdateUser();
+                    _ObjUpdateUser.EnterUpdateUserDetails();
                     break;
                 case 3:
                     break;
@@ -46,7 +49,8 @@ namespace Operations
                     _ObjInsertDepartment.EntertDepartmentDetails();
                     break;
                 case 7:
-                   
+                    var _ObjInsertPostal = new InsertPostal();
+                    _ObjInsertPostal.EnterPostalAddressDetails();
                     break;
                 case 8:
                     break;
@@ -59,9 +63,7 @@ namespace Operations
                     break;
             }
 
-
-
-
+                        
 
         }
     }

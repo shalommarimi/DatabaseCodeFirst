@@ -50,11 +50,7 @@ namespace Operations.CRUD.User
             {
                 try
                 {
-
-
-
-
-
+                    
 
                     var _objupdateUser = updateUserContext.user.Find(PK_id);
 
@@ -71,13 +67,13 @@ namespace Operations.CRUD.User
 
                     updateUserContext.SaveChanges();
 
-                    Console.WriteLine("user details updated");
+                    Console.WriteLine("User details updated");
                     Console.ReadKey();
 
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Details was not updated");
+                    Console.WriteLine("Could not updated user Details");
                     Console.ReadKey();
                 }
             }

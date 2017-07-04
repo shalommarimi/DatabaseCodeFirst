@@ -57,6 +57,7 @@
     <Compile Include="CRUD\InsertDepartment.cs" />
     <Compile Include="CRUD\PhysicalAddress\InsertPhysical.cs" />
     <Compile Include="CRUD\PhysicalAddress\UpdatePhysical.cs" />
+    <Compile Include="CRUD\PostalAddress\InsertPostal.cs" />
     <Compile Include="CRUD\User\SelectUser.cs" />
     <Compile Include="CRUD\User\UpdateApprovalStatus.cs" />
     <Compile Include="CRUD\User\InsertUser.cs" />
@@ -68,9 +69,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CRUD\PostalAddress\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{c2e25823-9b0c-4d63-b6ec-0e31403d3c33}</Project>
