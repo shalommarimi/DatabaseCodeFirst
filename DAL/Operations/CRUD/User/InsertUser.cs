@@ -1,6 +1,7 @@
 ﻿using DAL.DBContext;
 using DAL.Domain_Classes;
 using DataAccessLayer.DomainClasses;
+using Operations.CRUD.PhysicalAddress;
 using System;
 
 namespace Operations.CRUD.User
@@ -36,8 +37,16 @@ namespace Operations.CRUD.User
 
                     _ObjUsersDBContext.user.Add(_ObjUser);
                     _ObjUsersDBContext.SaveChanges();
-                    Console.WriteLine("New user has been created ");
+                    Console.WriteLine("New user has been created \r\n");
+
                     Console.WriteLine("Would you like to add your Physical Address? Y/N");
+                    string answer = Console.ReadLine();
+
+                    if ((answer.Equals("y", StringComparison.InvariantCultureIgnoreCase)))
+                    {
+                        var _ObjInsertPhysical = new InsertPhysical();
+                        _ObjInsertPhysical.EnterPhysicalAddressDetails();
+                    }
                     Console.ReadKey();
                 }
 

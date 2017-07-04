@@ -21,7 +21,7 @@ namespace DataAccessLayer.DomainClasses
 
         public int FK_DepartmentId { get; set; }
         [ForeignKey("FK_DepartmentId")]
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
 
 
         public int FK_GenderId { get; set; }

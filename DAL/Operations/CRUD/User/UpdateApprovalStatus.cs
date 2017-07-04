@@ -27,6 +27,7 @@ namespace Operations.CRUD
                 catch (Exception)
                 {
                     Console.WriteLine("Could not Approve User, Please make sure the User exist");
+                    Console.ReadKey();
                 }
             }
         }
