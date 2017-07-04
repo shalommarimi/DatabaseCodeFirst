@@ -32,14 +32,12 @@ namespace Operations.CRUD.User
                         FK_GenderId = userGenderId,
                         FK_UserTypeId = usertypeId
 
-
-
-
                     };
 
                     _ObjUsersDBContext.user.Add(_ObjUser);
                     _ObjUsersDBContext.SaveChanges();
                     Console.WriteLine("New user has been created ");
+                    Console.WriteLine("Would you like to add your Physical Address? Y/N");
                     Console.ReadKey();
                 }
 
@@ -62,7 +60,6 @@ namespace Operations.CRUD.User
 
             Console.WriteLine("Enter the last name :");
             string userLastName = Console.ReadLine();
-
 
             Console.WriteLine("Enter the email addres:");
             string userEmailAddress = Console.ReadLine();
