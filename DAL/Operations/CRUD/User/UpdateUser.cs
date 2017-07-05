@@ -10,33 +10,33 @@ namespace Operations.CRUD.User
     {
         public void EnterUpdateUserDetails()
         {
-            Console.WriteLine("enter the user Id ");
+            Console.WriteLine("Enter UserId to Update");
             int PK_id = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter the firstname");
+            Console.WriteLine("Enter First Name");
             string userFirstname = Console.ReadLine();
 
-            Console.WriteLine("Enter the Middle name:");
+            Console.WriteLine("Enter Middle Name (Optional))");
             string userMiddleName = Console.ReadLine();
 
-            Console.WriteLine("Enter the last name :");
+            Console.WriteLine("Enter Last Name :");
             string userLastName = Console.ReadLine();
 
 
-            Console.WriteLine("Enter the email addres:");
+            Console.WriteLine("Enter Email Address:");
             string userEmailAddress = Console.ReadLine();
 
-            Console.WriteLine("Enter the password");
+            Console.WriteLine("Enter Password");
             string userPassword = Console.ReadLine();
 
 
-            Console.WriteLine("Enter the Department ID");
+            Console.WriteLine("Enter Department ID");
             string userDeptId = Console.ReadLine();
 
-            Console.WriteLine("Enter the GenderId");
+            Console.WriteLine("Enter GenderId");
             string userGenderId = Console.ReadLine();
 
-            Console.WriteLine("Enter the usertypeid");
+            Console.WriteLine("Enter the UserTypeId");
             string usertypeId = Console.ReadLine();
 
             var _ObjUpdateUser = new UpdateUser();
@@ -44,13 +44,15 @@ namespace Operations.CRUD.User
 
 
         }
+
+
         public void UpdateUserDetails(int PK_id, string userFirstname, string userMiddleName, string userLastName, string userEmailAddress, string userPassword, int userDeptId, int userGenderId, int usertypeId)
         {
             using (var updateUserContext = new UsersDbContext())
             {
                 try
                 {
-                    
+
 
                     var _objupdateUser = updateUserContext.user.Find(PK_id);
 
@@ -81,4 +83,3 @@ namespace Operations.CRUD.User
     }
 }
 
-    

@@ -60,7 +60,7 @@ namespace Operations.CRUD.PhysicalAddress
             Console.WriteLine("Please enter Suburb-ID");
             int FK_SuburbId = Convert.ToInt32(Console.ReadLine());
 
-            
+
             Console.WriteLine("\r\n");
 
             var _ObjInsertPhysicalAddress = new InsertPhysical();

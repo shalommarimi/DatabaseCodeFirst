@@ -11,15 +11,8 @@ namespace Operations.CRUD.User
     class InsertUser
     {
 
-        public void Insert_User(
-            string firstName,
-            string middleName,
-            string lastName,
-            string email,
-            string password,
-            int FK_DepartmentId,
-            int FK_GenderId,
-            int FK_UserTypeId)
+        public void Insert_User(string firstName, string middleName, string lastName, string email, string password, int FK_DepartmentId, int FK_GenderId, int FK_UserTypeId)
+            
         {
             using (var _ObjUsersDBContext = new UsersDbContext())
             {
