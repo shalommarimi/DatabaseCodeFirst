@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Operations.CRUD.User
+namespace Operations.CRUD.User                          /*This class and methods are still under construction, JOINS must be added to retrieve from multile tables*/
 {
     class SelectUser
     {
