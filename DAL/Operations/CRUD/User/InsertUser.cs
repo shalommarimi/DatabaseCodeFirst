@@ -18,7 +18,6 @@ namespace Operations.CRUD.User
                 try
                 {
 
-
                     var _ObjUser = new _User
                     {
 
