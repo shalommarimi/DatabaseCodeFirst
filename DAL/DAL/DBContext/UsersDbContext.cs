@@ -1,6 +1,4 @@
-﻿
-
-using DAL.Domain_Classes;
+﻿using DAL.Domain_Classes;
 using DataAccessLayer.DomainClasses;
 using System.Data.Entity;
 namespace DAL.DBContext

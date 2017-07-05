@@ -1,7 +1,5 @@
 ﻿using DAL.DBContext;
-using DAL.Domain_Classes;
 using DataAccessLayer.DomainClasses;
-using Operations.CRUD.PhysicalAddress;
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,7 +10,7 @@ namespace Operations.CRUD.User
     {
 
         public void Insert_User(string firstName, string middleName, string lastName, string email, string password, int FK_DepartmentId, int FK_GenderId, int FK_UserTypeId)
-            
+
         {
             using (var _ObjUsersDBContext = new UsersDbContext())
             {
@@ -46,12 +44,12 @@ namespace Operations.CRUD.User
 
 
                 catch (Exception)
-            {
+                {
 
-                Console.WriteLine("Could not create user, Please make sure that all Required fields are filled with appropriate information. E.g Fisrt Name does not accept numeric values");
-                Console.ReadKey();
+                    Console.WriteLine("Could not create user, Please make sure that all Required fields are filled with appropriate information. E.g Fisrt Name does not accept numeric values");
+                    Console.ReadKey();
+                }
             }
-        }
         }
 
 

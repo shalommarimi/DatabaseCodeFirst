@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using DAL.Domain_Classes;
 using System.ComponentModel.DataAnnotations.Schema;
