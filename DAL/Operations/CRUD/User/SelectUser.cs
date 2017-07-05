@@ -13,8 +13,8 @@ namespace Operations.CRUD.User                          /*This class and methods
             {
                 try
                 {   //Retrieving that Names
-                    var users = from user in _ObjUsersDbContext.user
-                                select user.LastName + " " + user.FirstName + " " + user.MiddleName + " " + user.FK_DepartmentId;
+                    var users = from user in _ObjUsersDbContext.User
+                                select user.LastName + " " + user.FirstName + " " + user.MiddleName + " " + user.FkDepartmentId;
 
                     //Looping through the Names
                     foreach (string user in users)
@@ -23,7 +23,7 @@ namespace Operations.CRUD.User                          /*This class and methods
                     }
 
                     Console.ReadKey();
-                    
+
                 }
                 //In case of any errors, it will be caught here
                 catch (Exception)

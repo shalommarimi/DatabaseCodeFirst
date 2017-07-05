@@ -1,13 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
-namespace DataAccessLayer.DomainClasses
+namespace DAL.Domain_Classes
 {
-    public class Postal_Address
+    public class PostalAddress
     {
         [Key]
-        public int PK_PostalAddressId { get; set; }
+        public int PkPostalAddressId { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 2)]
@@ -15,13 +14,13 @@ namespace DataAccessLayer.DomainClasses
         public string AddressLine2 { get; set; }
         public string AddressLine3 { get; set; }
 
-        public int FK_UserId { get; set; }
-        [ForeignKey("FK_UserId")]
+        public int FkUserId { get; set; }
+        [ForeignKey("FkUserId")]
         public _User User { get; set; }
 
 
-        public int FK_SuburbId { get; set; }
-        [ForeignKey("FK_SuburbId")]
+        public int FkSuburbId { get; set; }
+        [ForeignKey("FkSuburbId")]
         public Suburb Suburb { get; set; }
     }
 }

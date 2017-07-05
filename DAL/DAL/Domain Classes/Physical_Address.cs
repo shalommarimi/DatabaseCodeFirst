@@ -1,18 +1,12 @@
-﻿using DataAccessLayer.DomainClasses;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Domain_Classes
 {
-    public class Physical_Address
+    public class PhysicalAddress
     {
         [Key]
-        public int PK_PhysicalAddessId { get; set; }
+        public int PkPhysicalAddessId { get; set; }
         [Required]
         [StringLength(100, MinimumLength = 2)]
         public string StreetLine1 { get; set; }
@@ -22,13 +16,13 @@ namespace DAL.Domain_Classes
         public string StreetLine3 { get; set; }
 
 
-        public int FK_UserId { get; set; }
-        [ForeignKey("FK_UserId")]
+        public int FkUserId { get; set; }
+        [ForeignKey("FkUserId")]
         public _User User { get; set; }
 
 
-        public int FK_SuburbId { get; set; }
-        [ForeignKey("FK_SuburbId")]
+        public int FkSuburbId { get; set; }
+        [ForeignKey("FkSuburbId")]
         public Suburb Suburb { get; set; }
 
     }

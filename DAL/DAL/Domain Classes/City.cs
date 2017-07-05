@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DataAccessLayer.DomainClasses
+namespace DAL.Domain_Classes
 {
     public class City
     {
         [Key]
-        public int PK_CityId { get; set; }
+        public int PkCityId { get; set; }
         public string CityName { get; set; }
 
-        public int FK_ProvinceId { get; set; }
-        [ForeignKey("FK_ProvinceId")]
+        public int FkProvinceId { get; set; }
+        [ForeignKey("FkProvinceId")]
         public Province Province { get; set; }
 
-        
+
     }
 }

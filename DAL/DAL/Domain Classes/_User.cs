@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using DAL.Domain_Classes;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DataAccessLayer.DomainClasses
+namespace DAL.Domain_Classes
 {
     public class _User
     {
         [Key]
-        public int PK_UserId { get; set; }
+        public int PkUserId { get; set; }
 
         [Required]
         [RegularExpression("^[a-zA-Z][a-zA-Z\\s]+$")]// No numerics are allowed
@@ -36,21 +35,21 @@ namespace DataAccessLayer.DomainClasses
         public bool IsDeleted { get; set; }
 
 
-        public int FK_DepartmentId { get; set; }
-        [ForeignKey("FK_DepartmentId")]
+        public int FkDepartmentId { get; set; }
+        [ForeignKey("FkDepartmentId")]
         public virtual Department Department { get; set; }
 
 
-        public int FK_GenderId { get; set; }
-        [ForeignKey("FK_GenderId")]
+        public int FkGenderId { get; set; }
+        [ForeignKey("FkGenderId")]
         public Gender Gender { get; set; }
 
-        public int FK_UserTypeId { get; set; }
-        [ForeignKey("FK_UserTypeId")]
+        public int FkUserTypeId { get; set; }
+        [ForeignKey("FkUserTypeId")]
         public UserType UserType { get; set; }
 
-        public ICollection<Physical_Address> PhysicalAddress { get; set; }
-        public ICollection<Postal_Address> PostalAddress { get; set; }
+        public ICollection<PhysicalAddress> PhysicalAddress { get; set; }
+        public ICollection<PostalAddress> PostalAddress { get; set; }
 
     }
 }

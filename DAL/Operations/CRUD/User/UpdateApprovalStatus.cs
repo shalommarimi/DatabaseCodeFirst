@@ -1,27 +1,23 @@
-﻿using System;
-using DAL.DBContext;
-using DataAccessLayer.DomainClasses;
+﻿using DAL.DBContext;
+using System;
 using System.Linq;
 
-namespace Operations.CRUD
+namespace Operations.CRUD.User
 {
     class UpdateApprovalStatus
     {
 
-        public void UpdateUserApproval(int FK_UserId, bool isApproved)
+        public void UpdateUserApproval(int fkUserId, bool isApproved)
         {
-            using (var _ObjUsersDbContext = new UsersDbContext())
+            using (var objUsersDbContext = new UsersDbContext())
             {
                 try
                 {
+                    var objUser = objUsersDbContext.User.SingleOrDefault(x => x.PkUserId == fkUserId);
+                    objUser.IsApproved = isApproved;
+                    objUsersDbContext.SaveChanges();
 
-                    var _ObjUser = new _User();
-
-                    _ObjUser = _ObjUsersDbContext.user.SingleOrDefault(x => x.PK_UserId == FK_UserId);
-                    _ObjUser.IsApproved = isApproved;
-                    _ObjUsersDbContext.SaveChanges();
-
-                    Console.WriteLine("User with Id " + FK_UserId + " has been Approved");
+                    Console.WriteLine("User with Id " + fkUserId + " has been Approved");
                     Console.ReadKey();
                 }
                 catch (Exception)
@@ -48,15 +44,12 @@ namespace Operations.CRUD
                     isApproved = true;
                     break;
 
-                case 2:
-                    isApproved = false;
-                    break;
                 default:
                     Console.WriteLine("Incorrect option");
                     break;
             }
-            var _ObjUpdateUserStatus = new UpdateApprovalStatus();
-            _ObjUpdateUserStatus.UpdateUserApproval(userId, isApproved);
+            var objUpdateUserStatus = new UpdateApprovalStatus();
+            objUpdateUserStatus.UpdateUserApproval(userId, isApproved);
 
         }
     }

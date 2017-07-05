@@ -1,5 +1,4 @@
-﻿using Operations.CRUD;
-using Operations.CRUD.PhysicalAddress;
+﻿using Operations.CRUD.PhysicalAddress;
 using Operations.CRUD.PostalAddress;
 using Operations.CRUD.User;
 using System;
@@ -22,42 +21,42 @@ namespace Operations
             switch (option)
             {
                 case 0:
-                    var _ObjSelectUser = new SelectUser();
-                    _ObjSelectUser.RetrieveUser();
+                    var objSelectUser = new SelectUser();
+                    objSelectUser.RetrieveUser();
                     break;
                 case 1:
-                    var _ObjInsertUser = new InsertUser();
-                    _ObjInsertUser.EnterUserDetails();
+                    var objInsertUser = new InsertUser();
+                    objInsertUser.EnterUserDetails();
                     break;
 
                 case 2:
-                    var _ObjUpdateUser = new UpdateUser();
-                    _ObjUpdateUser.EnterUpdateUserDetails();
+                    var objUpdateUser = new UpdateUser();
+                    objUpdateUser.EnterUpdateUserDetails();
                     break;
                 case 3:
                     break;
                 case 4:
-                    var _ObjInsertPhysical = new InsertPhysical();
-                    _ObjInsertPhysical.EnterPhysicalAddressDetails();
+                    var objInsertPhysical = new InsertPhysical();
+                    objInsertPhysical.EnterPhysicalAddressDetails();
                     break;
                 case 5:
-                    var _ObjUpdatePhysical = new UpdatePhysical();
-                    _ObjUpdatePhysical.EnterPhysicalUpdateDetails();
+                    var objUpdatePhysical = new UpdatePhysical();
+                    objUpdatePhysical.EnterPhysicalUpdateDetails();
                     break;
                 case 6:
 
                     break;
                 case 7:
-                    var _ObjInsertPostal = new InsertPostal();
-                    _ObjInsertPostal.EnterPostalAddressDetails();
+                    var objInsertPostal = new InsertPostal();
+                    objInsertPostal.EnterPostalAddressDetails();
                     break;
                 case 8:
-                    var _ObjUpdatePostal = new UpdatePostal();
-                    _ObjUpdatePostal.EnterPostalUpdateDetails();
+                    var objUpdatePostal = new UpdatePostal();
+                    objUpdatePostal.EnterPostalUpdateDetails();
                     break;
                 case 10:
-                    var _ObjUpdateApprovalStatus = new UpdateApprovalStatus();
-                    _ObjUpdateApprovalStatus.EnterUpdateStatus();
+                    var objUpdateApprovalStatus = new UpdateApprovalStatus();
+                    objUpdateApprovalStatus.EnterUpdateStatus();
                     break;
                 default:
                     Console.WriteLine("Opps! Invalid option entered. Retry");
