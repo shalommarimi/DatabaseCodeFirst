@@ -1,4 +1,5 @@
 ﻿using DAL.DBContext;
+using DataAccessLayer.DomainClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,29 +15,63 @@ namespace Operations.CRUD.User                          /*This class and methods
         {
             using (var _ObjUsersDbContext = new UsersDbContext())
             {
-                try
-                {   //Retrieving that Names
+               // try
+                //{   //Retrieving that Names
                     var users = from user in _ObjUsersDbContext.user
                                 select user.LastName + " " + user.FirstName + " " + user.MiddleName + " " + user.FK_DepartmentId;
+                    //LINQ query for selecting information about all the users
+                    
+      
+            
+          
+               
 
-                    //Looping through the Names
-                    foreach (string user in users)
-                    {
+                // var users = from user in _ObjUsersDbContext.user
+                //select user.LastName + " " + user.FirstName + " " + user.MiddleName + " " + user.FK_DepartmentId;
+
+
+                _User u = new _User();
+
+                var query = (from user in _ObjUsersDbContext.user.DefaultIfEmpty(new _User())
+                             join department in _ObjUsersDbContext.department on user.FK_DepartmentId equals department.PK_DepartmentId
+                             join sex in _ObjUsersDbContext.gender on user.FK_GenderId equals sex.PK_GenderId
+                             join types in _ObjUsersDbContext.userType on user.FK_UserTypeId equals types.UserTypeId
+                             join physAddress in _ObjUsersDbContext.physicalAddress on user.PK_UserId equals physAddress.FK_UserId
+                             join postAddress in _ObjUsersDbContext.postalAddress on user.PK_UserId equals postAddress.FK_UserId
+
+                             select new
+
+                             {
+                                 user.PK_UserId,
+                                 user.FirstName,
+                                 user.MiddleName,
+                                 user.LastName,
+                                 department.DepartmentName,
+                                 sex.GenderValue,
+                                 types.UserTypeName,
+                                 department.DepartmentDescription,
+                                 physAddress.StreetLine1,
+                                 physAddress.StreetLine2,
+                                 physAddress.StreetLine3
+                             });
+                //Looping through the Names
+                foreach (var user in query)
+                    //{
                         Console.WriteLine("{0}", user);
-                    }
+                    //}
 
                     Console.ReadKey();
                     
                 }
                 //In case of any errors, it will be caught here
-                catch (Exception)
-                {
+                //catch (Exception)
+                //{
 
-                    Console.WriteLine("Unable to retrieve user(s)");
-                    Console.ReadKey();
-                }
+                //    Console.WriteLine("Unable to retrieve user(s)");
+                //    Console.ReadKey();
+                //}
             }
 
         }
     }
-}
+

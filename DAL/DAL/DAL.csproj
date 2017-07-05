@@ -62,11 +62,21 @@
     <Compile Include="Domain Classes\Suburb.cs" />
     <Compile Include="Domain Classes\_User.cs" />
     <Compile Include="Domain Classes\UserType.cs" />
+    <Compile Include="Migrations\201707051342149_managements.cs" />
+    <Compile Include="Migrations\201707051342149_managements.Designer.cs">
+      <DependentUpon>201707051342149_managements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707051342149_managements.resx">
+      <DependentUpon>201707051342149_managements.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
