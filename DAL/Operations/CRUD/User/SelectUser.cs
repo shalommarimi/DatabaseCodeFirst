@@ -34,7 +34,7 @@ namespace Operations.CRUD.User                       //" CLASS UNDER CONSTRUCTIO
                              DepartmentName = Department.DepartmentName,
                              //sex.GenderValue,
                              // types.UserTypeName,
-                             department.DepartmentDescription,
+                             //department.DepartmentDescription,
                              //physAddress.StreetLine1,
                              //physAddress.StreetLine2,
                              //physAddress.StreetLine3
@@ -43,7 +43,7 @@ namespace Operations.CRUD.User                       //" CLASS UNDER CONSTRUCTIO
             //foreach(var results in query)
             foreach (var resuls in query)
             {
-                Console.WriteLine("{0}, {1}, {2},{3}", resuls.PK_UserId, resuls.FirstName, resuls.MiddleName, resuls.LastName);
+                Console.WriteLine("{0}, {1}, {2},{3},{4}", resuls.PK_UserId, resuls.FirstName, resuls.MiddleName, resuls.LastName,resuls.DepartmentName);
                 //, resuls.StreetLine1, resuls.StreetLine2, resuls.StreetLine3,resuls.DepartmentName);
                 //,resuls.UserTypeName,resuls.DepartmentName,resuls.DepartmentDescription,resuls.StreetLine1
                 //,resuls.StreetLine2,resuls.StreetLine3);

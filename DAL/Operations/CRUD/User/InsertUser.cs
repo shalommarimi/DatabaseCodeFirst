@@ -46,7 +46,13 @@ namespace Operations.CRUD.User
                 catch (Exception)
                 {
 
-                    Console.WriteLine("Could not create user, Please make sure that all Required fields are filled with appropriate information. E.g Fisrt Name does not accept numeric values");
+                    Console.WriteLine("Could not create user, Please make sure that all Required fields are filled with appropriate information. E.g Fisrt Name does not accept numeric values\r\n");
+                    Console.WriteLine("Press enter to Re-register");
+                    Console.ReadKey();
+                    Console.Clear();
+                                  
+                    var objInsertUser = new InsertUser();
+                    objInsertUser.EnterUserDetails();
                     Console.ReadKey();
                 }
             }
