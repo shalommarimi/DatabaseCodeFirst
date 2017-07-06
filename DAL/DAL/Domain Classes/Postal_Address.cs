@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Domain_Classes
 {
-    public class PostalAddress
+    public class Postal_Address
     {
         [Key]
         public int PkPostalAddressId { get; set; }

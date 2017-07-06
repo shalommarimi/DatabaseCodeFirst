@@ -1,4 +1,5 @@
 ﻿using DAL.DBContext;
+using DAL.Domain_Classes;
 using System;
 
 
@@ -14,7 +15,7 @@ namespace Operations.CRUD.PostalAddress
             {
                 try
                 {
-                    var objPostalAddress = new DAL.Domain_Classes.PostalAddress
+                    var objPostalAddress = new Postal_Address
                     {
 
                         AddressLine1 = addressLine1,

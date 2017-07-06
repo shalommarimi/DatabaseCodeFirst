@@ -1,8 +1,8 @@
 ﻿using DAL.DBContext;
+using DAL.Domain_Classes;
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using DAL.Domain_Classes;
 
 namespace Operations.CRUD.User
 {
@@ -39,7 +39,6 @@ namespace Operations.CRUD.User
                     objUsersDbContext.SaveChanges();
                     Console.WriteLine("New user has been created \r\n");
 
-                 
                     Console.ReadKey();
                 }
 

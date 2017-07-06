@@ -9,8 +9,8 @@ namespace DAL.DBContext
         public virtual DbSet<_User> User { get; set; }
         public virtual DbSet<Department> Department { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
-        public virtual DbSet<PhysicalAddress> PhysicalAddress { get; set; }
-        public virtual DbSet<PostalAddress> PostalAddress { get; set; }
+        public virtual DbSet<Physical_Address> PhysicalAddress { get; set; }
+        public virtual DbSet<Postal_Address> PostalAddress { get; set; }
         public virtual DbSet<PostalCode> PostalCode { get; set; }
         public virtual DbSet<Province> Province { get; set; }
         public virtual DbSet<Suburb> Suburb { get; set; }

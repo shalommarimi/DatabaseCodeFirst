@@ -3,6 +3,7 @@ using DAL.Domain_Classes;
 using System;
 
 
+
 namespace Operations.CRUD.PhysicalAddress
 {
     class InsertPhysical
@@ -16,7 +17,7 @@ namespace Operations.CRUD.PhysicalAddress
             {
                 try
                 {
-                    var objPhysicalAddress = new DAL.Domain_Classes.PhysicalAddress
+                    var objPhysicalAddress = new Physical_Address
                     {
 
                         StreetLine1 = streetLine1,

@@ -48,8 +48,8 @@ namespace DAL.Domain_Classes
         [ForeignKey("FkUserTypeId")]
         public UserType UserType { get; set; }
 
-        public ICollection<PhysicalAddress> PhysicalAddress { get; set; }
-        public ICollection<PostalAddress> PostalAddress { get; set; }
+        public ICollection<Physical_Address> PhysicalAddress { get; set; }
+        public ICollection<Postal_Address> PostalAddress { get; set; }
 
     }
 }

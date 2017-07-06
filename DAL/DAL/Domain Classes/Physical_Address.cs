@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Domain_Classes
 {
-    public class PhysicalAddress
+    public class Physical_Address
     {
         [Key]
         public int PkPhysicalAddessId { get; set; }
