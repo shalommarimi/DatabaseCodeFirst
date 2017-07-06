@@ -50,7 +50,7 @@ namespace Operations.CRUD.User
                     Console.WriteLine("Press enter to Re-register");
                     Console.ReadKey();
                     Console.Clear();
-                                  
+
                     var objInsertUser = new InsertUser();
                     objInsertUser.EnterUserDetails();
                     Console.ReadKey();
