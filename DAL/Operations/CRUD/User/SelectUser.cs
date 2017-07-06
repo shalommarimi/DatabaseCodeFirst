@@ -1,18 +1,15 @@
 ﻿using DAL.DBContext;
 using DAL.Domain_Classes;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Operations.CRUD.User
+namespace Operations.CRUD.User                       //" CLASS UNDER CONSTRUCTION"
 {
     class SelectUser : _User
     {
         public void RetrieveUser()
         {
-            var _ObjUsersDbContext = new UsersDbContext();
+            var objUsersDbContext = new UsersDbContext();
 
             // var users = from user in _ObjUsersDbContext.user
             //select user.LastName + " " + user.FirstName + " " + user.MiddleName + " " + user.FK_DepartmentId;
@@ -20,8 +17,8 @@ namespace Operations.CRUD.User
 
             _User u = new _User();
 
-            var query = (from user in _ObjUsersDbContext.User  //.DefaultIfEmpty(new _User())
-                         join department in _ObjUsersDbContext.Department on user.FkDepartmentId equals Department.PkDepartmentId
+            var query = (from user in objUsersDbContext.User  //.DefaultIfEmpty(new _User())
+                         join department in objUsersDbContext.Department on user.FkDepartmentId equals Department.PkDepartmentId
                          //join sex in _ObjUsersDbContext.gender on user.FK_GenderId equals sex.PK_GenderId
                          // join types in _ObjUsersDbContext.userType on user.FK_UserTypeId equals types.UserTypeId
                          // join physAddress in _ObjUsersDbContext.physicalAddress on user.PK_UserId equals physAddress.FK_UserId

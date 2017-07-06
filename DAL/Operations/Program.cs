@@ -14,7 +14,7 @@ namespace Operations
             Console.WriteLine("Main Menu \r\n  \r\n User Operations: \r\n 0. See Registered Users \r\n 1. Register User  \r\n 2. Update User  \r\n 3. Delete User \r\n");
             Console.WriteLine("Physical Address Operations: \r\n 4. Enter User Physical Address  \r\n 5. Update User Physical Address  \r\n 6. Delete Physical Address \r\n");
             Console.WriteLine("Postal Address Operations: \r\n 7. Enter User Postal Address  \r\n 8. Update User Postal Address  \r\n 9. Delete Postal Address \r\n");
-            Console.WriteLine("User Approval Operations: \r\n 10. Approve or Disapprove User");
+            Console.WriteLine("User Approval Operations: \r\n 10. Press 1 to Approve User");
 
 
             int option = Convert.ToInt32(Console.ReadLine());

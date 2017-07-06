@@ -35,7 +35,7 @@ namespace Operations.CRUD.User
             Console.WriteLine("Please UserId to Approve");
             int userId = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Options \r\n 1.  Approve User \r\n 2. Disapprove User");
+            Console.WriteLine("Options \r\n 1.  Approve User");
             int option = Convert.ToInt32(Console.ReadLine());
             bool isApproved = false;
             switch (option)
