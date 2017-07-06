@@ -1,16 +1,13 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
 
-using System.ComponentModel.DataAnnotations;
-
-
-namespace DataAccessLayer.DomainClasses
+namespace DAL.Domain_Classes
 {
-    public class Postal_Code
+    public class PostalCode
     {
         [Key]
-        public int PK_PostalCodeId { get; set; }
+        public int PkPostalCodeId { get; set; }
         public string PostalCodeNumber { get; set; }
-        public Suburb FK_SuburbId { get; set; }
+        public Suburb FkSuburbId { get; set; }
 
     }
 }

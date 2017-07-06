@@ -1,34 +1,24 @@
 ﻿using DAL.DBContext;
-using DAL.Domain_Classes;
-using DataAccessLayer.DomainClasses;
-using Operations.CRUD.PhysicalAddress;
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using DAL.Domain_Classes;
 
 namespace Operations.CRUD.User
 {
     class InsertUser
     {
 
-        public void Insert_User(
-            string firstName,
-            string middleName,
-            string lastName,
-            string email,
-            string password,
-            int FK_DepartmentId,
-            int FK_GenderId,
-            int FK_UserTypeId)
+        public void Insert_User(string firstName, string middleName, string lastName, string email, string password, int fkDepartmentId, int fkGenderId, int fkUserTypeId)
+
         {
-            using (var _ObjUsersDBContext = new UsersDbContext())
+            using (var objUsersDbContext = new UsersDbContext())
             {
 
                 try
                 {
 
-
-                    var _ObjUser = new _User
+                    var objUser = new _User
                     {
 
                         IsDeleted = false,
@@ -39,26 +29,26 @@ namespace Operations.CRUD.User
                         LastName = lastName,
                         EmailAddress = email,
                         Password = password,
-                        FK_DepartmentId = FK_DepartmentId,
-                        FK_GenderId = FK_GenderId,
-                        FK_UserTypeId = FK_UserTypeId
+                        FkDepartmentId = fkDepartmentId,
+                        FkGenderId = fkGenderId,
+                        FkUserTypeId = fkUserTypeId
 
                     };
 
-                    _ObjUsersDBContext.user.Add(_ObjUser);
-                    _ObjUsersDBContext.SaveChanges();
+                    objUsersDbContext.User.Add(objUser);
+                    objUsersDbContext.SaveChanges();
                     Console.WriteLine("New user has been created \r\n");
                     Console.ReadKey();
                 }
 
 
                 catch (Exception)
-            {
+                {
 
-                Console.WriteLine("Could not create user, Please make sure that all Required fields are filled with appropriate information. E.g Fisrt Name does not accept numeric values");
-                Console.ReadKey();
+                    Console.WriteLine("Could not create user, Please make sure that all Required fields are filled with appropriate information. E.g Fisrt Name does not accept numeric values");
+                    Console.ReadKey();
+                }
             }
-        }
         }
 
 
@@ -82,13 +72,13 @@ namespace Operations.CRUD.User
 
 
             Console.WriteLine("Enter Department ID, 1-GMIC, 2-GQUA, 3-GMOB");
-            string FK_DepartmentId = Console.ReadLine();
+            string fkDepartmentId = Console.ReadLine();
 
             Console.WriteLine("Enter  Gender ID 1-Male, 2-Female");
-            string FK_GenderId = Console.ReadLine();
+            string fkGenderId = Console.ReadLine();
 
             Console.WriteLine("Enter User Type Id, 1-Normal, 2-Admin");
-            string FK_UserTypeId = Console.ReadLine();
+            string fkUserTypeId = Console.ReadLine();
 
             //Hashing the password with some salt
             //Calling or Invoking the HashingPassword method and Passing the entered Password + default Salt
@@ -96,8 +86,8 @@ namespace Operations.CRUD.User
             string hashedPassword = HashingPassword(password + salt);
 
 
-            var _ObjInsertUser = new InsertUser();
-            _ObjInsertUser.Insert_User(firstName, middleName, lastName, email, hashedPassword, Convert.ToInt16(FK_DepartmentId), Convert.ToInt16(FK_GenderId), Convert.ToInt16(FK_UserTypeId));
+            var objInsertUser = new InsertUser();
+            objInsertUser.Insert_User(firstName, middleName, lastName, email, hashedPassword, Convert.ToInt16(fkDepartmentId), Convert.ToInt16(fkGenderId), Convert.ToInt16(fkUserTypeId));
 
 
         }
@@ -105,15 +95,15 @@ namespace Operations.CRUD.User
         public string HashingPassword(string input)
         {
             byte[] hash;
-            using (var _SHA1CryptoServiceProvider = new SHA1CryptoServiceProvider())
+            using (var sha1CryptoServiceProvider = new SHA1CryptoServiceProvider())
             {
-                hash = _SHA1CryptoServiceProvider.ComputeHash(Encoding.Unicode.GetBytes(input));
+                hash = sha1CryptoServiceProvider.ComputeHash(Encoding.Unicode.GetBytes(input));
             }
-            var _StringBuilder = new StringBuilder();
+            var stringBuilder = new StringBuilder();
 
-            foreach (byte b in hash) _StringBuilder.AppendFormat("{0:x2}", b);
+            foreach (byte b in hash) stringBuilder.AppendFormat("{0:x2}", b);
             {
-                return _StringBuilder.ToString();
+                return stringBuilder.ToString();
             }
         }
 

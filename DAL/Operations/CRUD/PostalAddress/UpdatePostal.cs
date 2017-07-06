@@ -1,7 +1,6 @@
 ﻿
 
 using DAL.DBContext;
-using DataAccessLayer.DomainClasses;
 using System;
 using System.Linq;
 
@@ -11,10 +10,10 @@ namespace Operations.CRUD.PostalAddress
     {
         public void EnterPostalUpdateDetails()
         {
-            var _ObjUpdatePostal = new UpdatePostal();
+
 
             Console.WriteLine("Please enter AddressId");
-            int PK_PostalId = Convert.ToInt32(Console.ReadLine());
+            int pkPostalId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter StreetLine1");
             string addressLine1 = Console.ReadLine();
@@ -26,32 +25,29 @@ namespace Operations.CRUD.PostalAddress
             string addressLine3 = Console.ReadLine();
 
             Console.WriteLine("Please enter Suburb");
-            int FK_SuburbId = Convert.ToInt32(Console.ReadLine());
+            int fkSuburbId = Convert.ToInt32(Console.ReadLine());
 
-            Update_Postal(addressLine1, addressLine2, addressLine3, FK_SuburbId, PK_PostalId);
+            Update_Postal(addressLine1, addressLine2, addressLine3, fkSuburbId, pkPostalId);
         }
 
 
 
 
-        public void Update_Postal(string addressLine1, string addressLine2, string addressLine3, int FK_SuburbId, int FK_PostalId)
+        public void Update_Postal(string addressLine1, string addressLine2, string addressLine3, int fkSuburbId, int fkPostalId)
         {
-            using (var usersDBContext = new UsersDbContext())
+            using (var usersDbContext = new UsersDbContext())
             {
                 try
                 {
-                    var _ObjUpdatePostal = new Postal_Address();
+                    var objUpdatePostal = usersDbContext.PostalAddress.SingleOrDefault(x => x.PkPostalAddressId == fkPostalId);
+
+                    objUpdatePostal.AddressLine1 = addressLine1;
+                    objUpdatePostal.AddressLine2 = addressLine2;
+                    objUpdatePostal.AddressLine3 = addressLine3;
+                    objUpdatePostal.FkSuburbId = fkSuburbId;
 
 
-                    _ObjUpdatePostal = usersDBContext.postalAddress.SingleOrDefault(x => x.PK_PostalAddressId == FK_PostalId);
-
-                    _ObjUpdatePostal.AddressLine1 = addressLine1;
-                    _ObjUpdatePostal.AddressLine2 = addressLine2;
-                    _ObjUpdatePostal.AddressLine3 = addressLine3;
-                    _ObjUpdatePostal.FK_SuburbId = FK_SuburbId;
-
-
-                    usersDBContext.SaveChanges();
+                    usersDbContext.SaveChanges();
                     Console.WriteLine("Postal Address Updated");
                     Console.ReadKey();
                 }
