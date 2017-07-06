@@ -14,7 +14,7 @@ namespace Operations.CRUD.PhysicalAddress
                 try
                 {
                     var objUpdatePhysical = usersDbContext.PhysicalAddress.SingleOrDefault(x => x.PkPhysicalAddessId == pkPhysicalId);
-                    
+
                     objUpdatePhysical = usersDbContext.PhysicalAddress.SingleOrDefault(x => x.PkPhysicalAddessId == pkPhysicalId);
                     objUpdatePhysical.StreetLine1 = streetLine1;
                     objUpdatePhysical.StreetLine2 = streetLine2;
