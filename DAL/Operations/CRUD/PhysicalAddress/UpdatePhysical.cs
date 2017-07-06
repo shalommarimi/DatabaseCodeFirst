@@ -15,13 +15,12 @@ namespace Operations.CRUD.PhysicalAddress
                 {
                     var objUpdatePhysical = usersDbContext.PhysicalAddress.SingleOrDefault(x => x.PkPhysicalAddessId == pkPhysicalId);
 
-                    objUpdatePhysical = usersDbContext.PhysicalAddress.SingleOrDefault(x => x.PkPhysicalAddessId == pkPhysicalId);
                     objUpdatePhysical.StreetLine1 = streetLine1;
                     objUpdatePhysical.StreetLine2 = streetLine2;
                     objUpdatePhysical.StreetLine3 = streetLine3;
+
                     objUpdatePhysical.FkSuburbId = fkSuburbId;
                     usersDbContext.SaveChanges();
-
                     Console.WriteLine("Physical Address Updated");
                     Console.ReadKey();
                 }
