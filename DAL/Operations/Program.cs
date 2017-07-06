@@ -27,6 +27,18 @@ namespace Operations
                 case 1:
                     var objInsertUser = new InsertUser();
                     objInsertUser.EnterUserDetails();
+
+                    Console.WriteLine("would you like to add your physical address: Y/N");
+                    char value = Convert.ToChar(Console.ReadLine());
+                    if (value == 'Y' || value == 'y')
+                    {
+                        var objaddressOption = new InsertPhysical();
+                        objaddressOption.EnterPhysicalAddressDetails();
+                    }
+                    else if(value=='N'|| value=='n')
+                    {
+                        Console.WriteLine("Thank you ");
+                    }
                     break;
 
                 case 2:
