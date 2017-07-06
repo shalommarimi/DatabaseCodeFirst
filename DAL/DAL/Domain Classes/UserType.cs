@@ -8,6 +8,6 @@ namespace DAL.Domain_Classes
         [Key]
         public int UserTypeId { get; set; }
         public string UserTypeName { get; set; }
-        public ICollection<_User> User { get; set; }
+        public List<_User> User { get; set; }
     }
 }

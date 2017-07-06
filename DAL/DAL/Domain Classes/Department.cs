@@ -10,6 +10,6 @@ namespace DAL.Domain_Classes
         public string DepartmentName { get; set; }
         public string DepartmentDescription { get; set; }
 
-        public ICollection<_User> User { get; set; }
+        public List<_User> User { get; set; }
     }
 }

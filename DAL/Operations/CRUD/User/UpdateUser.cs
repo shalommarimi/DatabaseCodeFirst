@@ -23,9 +23,9 @@ namespace Operations.CRUD.User
                     objupdateUser.LastName = userLastName;
                     objupdateUser.EmailAddress = userEmailAddress;
                     objupdateUser.Password = userPassword;
-                    objupdateUser.FkGenderId = userGenderId;
-                    objupdateUser.FkDepartmentId = userDeptId;
-                    objupdateUser.FkUserTypeId = usertypeId;
+                   // objupdateUser.FkGenderId = userGenderId;
+                   // objupdateUser.FkDepartmentId = userDeptId;
+                  //  objupdateUser.FkUserTypeId = usertypeId;
 
                     updateUserContext.SaveChanges();
 

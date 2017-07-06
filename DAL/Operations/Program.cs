@@ -35,9 +35,9 @@ namespace Operations
                         var objaddressOption = new InsertPhysical();
                         objaddressOption.EnterPhysicalAddressDetails();
                     }
-                    else if(value=='N'|| value=='n')
+                    else if (value == 'N' || value == 'n')
                     {
-                        Console.WriteLine("Thank you ");
+                        Console.WriteLine("Thank you");
                     }
                     break;
 

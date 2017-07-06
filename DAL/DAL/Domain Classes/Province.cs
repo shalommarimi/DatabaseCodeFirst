@@ -9,7 +9,7 @@ namespace DAL.Domain_Classes
         [Key]
         public int PkProvinceId { get; set; }
         public string ProvinceName { get; set; }
-        public virtual ICollection<City> Cities { get; set; }
+        public virtual List<City> Cities { get; set; }
 
 
 
