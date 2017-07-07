@@ -23,6 +23,10 @@ namespace Operations.CRUD.User
                 catch (Exception)
                 {
                     Console.WriteLine("Could not Approve User, Please make sure the User exist");
+
+                    Console.WriteLine("User with Id " + fkUserId + " has been Approved");
+                    Console.ReadKey();
+
                     Console.ReadKey();
                 }
             }
