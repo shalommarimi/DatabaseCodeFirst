@@ -58,6 +58,7 @@
     <Compile Include="CRUD\PhysicalAddress\UpdatePhysical.cs" />
     <Compile Include="CRUD\PostalAddress\InsertPostal.cs" />
     <Compile Include="CRUD\PostalAddress\UpdatePostal.cs" />
+    <Compile Include="CRUD\User\DeleteUser.cs" />
     <Compile Include="CRUD\User\SelectUser.cs" />
     <Compile Include="CRUD\User\UpdateApprovalStatus.cs" />
     <Compile Include="CRUD\User\InsertUser.cs" />

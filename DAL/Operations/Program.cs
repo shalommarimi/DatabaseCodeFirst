@@ -15,6 +15,7 @@ namespace Operations
             Console.WriteLine("Physical Address Operations: \r\n 4. Enter User Physical Address  \r\n 5. Update User Physical Address  \r\n 6. Delete Physical Address \r\n");
             Console.WriteLine("Postal Address Operations: \r\n 7. Enter User Postal Address  \r\n 8. Update User Postal Address  \r\n 9. Delete Postal Address \r\n");
             Console.WriteLine("User Approval Operations: \r\n 10. Press 1 to Approve User");
+            Console.WriteLine("User Deletion Operations: \r\n 11. Press 1 to Delete User");
 
 
             int option = Convert.ToInt32(Console.ReadLine());
@@ -69,6 +70,11 @@ namespace Operations
                 case 10:
                     var objUpdateApprovalStatus = new UpdateApprovalStatus();
                     objUpdateApprovalStatus.EnterUpdateStatus();
+                    break;
+                case 11:
+                    var objSoftDeleteUser = new DeleteUser();
+                    objSoftDeleteUser.UserIdToDelete();
+
                     break;
                 default:
                     Console.WriteLine("Opps! Invalid option entered. Retry");
