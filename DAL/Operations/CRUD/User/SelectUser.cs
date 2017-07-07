@@ -11,8 +11,6 @@ namespace Operations.CRUD.User
         {
             var objUsersDbContext = new UsersDbContext();
 
-
-
             _User u = new _User();
 
             var query = (from user in objUsersDbContext.User  //.DefaultIfEmpty(new _User())
@@ -49,14 +47,7 @@ namespace Operations.CRUD.User
 
             }
 
-
-
             Console.ReadKey();
-
-
-
-
-
 
         }
 
