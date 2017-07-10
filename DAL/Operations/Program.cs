@@ -12,10 +12,10 @@ namespace Operations
         {
 
             Console.WriteLine("Main Menu \r\n  \r\n User Operations: \r\n 0. See Registered Users \r\n 1. Register User  \r\n 2. Update User  \r\n ");
-            Console.WriteLine("Physical Address Operations: \r\n 3. Enter User Physical Address  \r\n 4. Update User Physical Address  \r\n 5. Delete Physical Address \r\n");
-            Console.WriteLine("Postal Address Operations: \r\n 6. Enter User Postal Address  \r\n 7. Update User Postal Address  \r\n 8. Delete Postal Address \r\n");
-            Console.WriteLine("User Approval Operations: \r\n 9. Press 1 to Approve User");
-            Console.WriteLine("User Deletion Operations: \r\n 10. Press 1 to Delete User");
+            Console.WriteLine("Physical Address Operations: \r\n 3. Enter User Physical Address  \r\n 4. Update User Physical Address  \r\n ");
+            Console.WriteLine("Postal Address Operations: \r\n 5. Enter User Postal Address  \r\n 6. Update User Postal Address  \r\n ");
+            Console.WriteLine("User Approval Operations: \r\n 7. Press 1 to Approve User");
+            Console.WriteLine("User Deletion Operations: \r\n 8. Press 1 to Delete User");
 
 
             int option = Convert.ToInt32(Console.ReadLine());
