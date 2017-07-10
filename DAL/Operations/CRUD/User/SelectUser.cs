@@ -15,7 +15,7 @@ namespace Operations.CRUD.User
 
             var query = (from user in objUsersDbContext.User  //.DefaultIfEmpty(new _User())
                          join department in objUsersDbContext.Department on user.FkDepartmentId equals department.PkDepartmentId
-                         join sex in objUsersDbContext.Gender on user.FkGenderId equals sex.PkGenderId
+                         join gender in objUsersDbContext.Gender on user.FkGenderId equals gender.PkGenderId
                          join types in objUsersDbContext.UserType on user.FkUserTypeId equals types.UserTypeId
                          join physAddress in objUsersDbContext.PhysicalAddress on user.PkUserId equals physAddress.FkUserId
                          join postAddress in objUsersDbContext.PostalAddress on user.PkUserId equals postAddress.FkUserId
@@ -28,7 +28,7 @@ namespace Operations.CRUD.User
                              FirstName = user.FirstName,
                              MiddleName = user.MiddleName,
                              LastName = user.LastName,
-                             sex.GenderValue,
+                             gender.GenderValue,
                              DepartmentName = department.DepartmentName,  
                              IsApproved=user.IsApproved,                       
                              physAddress.StreetLine1,
