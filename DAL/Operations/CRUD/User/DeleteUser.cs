@@ -33,6 +33,7 @@ namespace Operations.CRUD.User
         public void UserIdToDelete()
         {
             Console.WriteLine("Please UserId to delete");
+
             int userId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Options \r\n Press 1 to Delete User");

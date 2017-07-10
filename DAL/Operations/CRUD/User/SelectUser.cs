@@ -29,7 +29,8 @@ namespace Operations.CRUD.User
                              MiddleName = user.MiddleName,
                              LastName = user.LastName,
                              sex.GenderValue,
-                             DepartmentName = department.DepartmentName,                         
+                             DepartmentName = department.DepartmentName,  
+                             IsApproved=user.IsApproved,                       
                              physAddress.StreetLine1,
                              physAddress.StreetLine2,
                              physAddress.StreetLine3,
@@ -42,8 +43,8 @@ namespace Operations.CRUD.User
 
             foreach (var results in query)
             {
-                Console.WriteLine("UserId:{0}  UserType: {1}  First Name: {2} Middle Name: {3} Last Name: {4} Gender: {5} Department Name: {6} Streetline1 {7} Streetline2 {8} Streetline3 {9}  Addressline1 {10} Addressline{11} Addressline {12}  ", results.PK_UserId, results.UserTypeName, results.FirstName, results.MiddleName, results.LastName, results.GenderValue
-                    , results.DepartmentName, results.StreetLine1, results.StreetLine2, results.StreetLine3, results.AddressLine1, results.AddressLine2, results.AddressLine3);
+                Console.WriteLine("UserId:{0}  UserType: {1}  First Name: {2} Middle Name: {3} Last Name: {4} Approval Status :{5} Gender: {6} Department Name: {7} Streetline1 {8} Streetline2 {9} Streetline3 {10}  Addressline1 {11} Addressline{12} Addressline {13}  ", results.PK_UserId, results.UserTypeName, results.FirstName, results.MiddleName, results.LastName, results.IsApproved,results.GenderValue
+                    , results.DepartmentName, results.StreetLine1, results.StreetLine2 , results.StreetLine3, results.AddressLine1, results.AddressLine2, results.AddressLine3);
 
             }
 

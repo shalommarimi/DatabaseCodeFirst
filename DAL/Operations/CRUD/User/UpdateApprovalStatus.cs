@@ -23,11 +23,8 @@ namespace Operations.CRUD.User
                 catch (Exception)
                 {
                     Console.WriteLine("Could not Approve User, Please make sure the User exist");
-
-                    Console.WriteLine("User with Id " + fkUserId + " has been Approved");
                     Console.ReadKey();
 
-                    Console.ReadKey();
                 }
             }
         }
@@ -36,7 +33,7 @@ namespace Operations.CRUD.User
 
         public void EnterUpdateStatus()
         {
-            Console.WriteLine("Please UserId to Approve");
+            Console.WriteLine("Please  enter UserId to Approve");
             int userId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Options \r\n 1.  Approve User");
