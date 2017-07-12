@@ -78,8 +78,7 @@ namespace Operations
                     Console.WriteLine("Opps! Invalid option entered. Retry");
                     Console.ReadKey();
 
-                    var objSelectsUser = new SelectUser();
-                    objSelectsUser.RetrieveUser();
+                    
 
                     break;
             }
