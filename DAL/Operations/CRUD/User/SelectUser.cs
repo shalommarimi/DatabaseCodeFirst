@@ -13,45 +13,18 @@ namespace Operations.CRUD.User
 
             _User u = new _User();
 
-            var query = (from user in objUsersDbContext.User  //.DefaultIfEmpty(new _User())
-                         join department in objUsersDbContext.Department on user.FkDepartmentId equals department.PkDepartmentId
-                         join gender in objUsersDbContext.Gender on user.FkGenderId equals gender.PkGenderId
-                         join types in objUsersDbContext.UserType on user.FkUserTypeId equals types.UserTypeId
-                         join physAddress in objUsersDbContext.PhysicalAddress on user.PkUserId equals physAddress.FkUserId
-                         join postAddress in objUsersDbContext.PostalAddress on user.PkUserId equals postAddress.FkUserId
-
-                         select new
-
-                         {
-                             PK_UserId = user.PkUserId,
-                             types.UserTypeName,
-                             FirstName = user.FirstName,
-                             MiddleName = user.MiddleName,
-                             LastName = user.LastName,
-                             gender.GenderValue,
-                             DepartmentName = department.DepartmentName,  
-                             IsApproved=user.IsApproved,                       
-                             physAddress.StreetLine1,
-                             physAddress.StreetLine2,
-                             physAddress.StreetLine3,
-                             postAddress.AddressLine1,
-                             postAddress.AddressLine2,
-                             postAddress.AddressLine3
-
-                         });
-
-
-            foreach (var results in query)
+            var qry = objUsersDbContext.User.Where(x => x.IsApproved == false).Select(y => new { y.PkUserId, y.FirstName, y.MiddleName, y.LastName,  y.Gender.GenderValue, y.Department.DepartmentName, y.PhysicalAddress.FirstOrDefault().StreetLine1, y.PhysicalAddress.FirstOrDefault().StreetLine2, y.PhysicalAddress.FirstOrDefault().StreetLine3 });
+            foreach (var results in qry)
             {
-                Console.WriteLine("UserId:{0}  UserType: {1}  First Name: {2} Middle Name: {3} Last Name: {4} Approval Status :{5} Gender: {6} Department Name: {7} Streetline1 {8} Streetline2 {9} Streetline3 {10}  Addressline1 {11} Addressline{12} Addressline {13}  ", results.PK_UserId, results.UserTypeName, results.FirstName, results.MiddleName, results.LastName, results.IsApproved,results.GenderValue
-                    , results.DepartmentName, results.StreetLine1, results.StreetLine2 , results.StreetLine3, results.AddressLine1, results.AddressLine2, results.AddressLine3);
+                Console.WriteLine("  UserID: {0} First Name: {1}  Middle Name: {2} Last Name: {3} Gender: {4} Department Name: {5} Streetline1: {6} Streetline2: {7} Streetline3: {8}  ", results.PkUserId, results.FirstName, results.MiddleName, results.LastName,  results.GenderValue
+                    , results.DepartmentName, results.StreetLine1, results.StreetLine2, results.StreetLine3);
 
             }
 
             Console.ReadKey();
 
         }
-
+        
     }
 
 
