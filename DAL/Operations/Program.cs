@@ -31,13 +31,14 @@ namespace Operations
                      
                     
                     Console.WriteLine("would you like to add your physical address: Y/N");
-                    char value = Convert.ToChar(Console.ReadLine());
-                    if (value == 'Y' || value == 'y')
+                    string value = Console.ReadLine(); 
+                    string lower = value.ToLower();
+                    if (lower == "y") 
                     {
                         var objaddressOption = new InsertPhysical();
                         objaddressOption.EnterPhysicalAddressDetails();
                     }
-                    else if (value == 'N' || value == 'n')
+                    else if (lower=="n")
                     {
                         Console.WriteLine("Thank you");
                     }
