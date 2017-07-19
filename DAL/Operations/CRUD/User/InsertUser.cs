@@ -12,6 +12,7 @@ namespace Operations.CRUD.User
         public void Insert_User(string firstName, string middleName, string lastName, string email, string password, int fkDepartmentId, int fkGenderId, int fkUserTypeId)
 
         {
+
             using (var objUsersDbContext = new UsersDbContext())
             {
 
@@ -20,6 +21,7 @@ namespace Operations.CRUD.User
 
                     var objUser = new _User
                     {
+
 
                         IsDeleted = false,
                         IsApproved = false,
