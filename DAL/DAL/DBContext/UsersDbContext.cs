@@ -4,7 +4,11 @@ namespace DAL.DBContext
 {
     public class UsersDbContext : DbContext
     {
+        public UsersDbContext() : base("UsersDBContext")
+        {
+            Database.SetInitializer(new SeedDataContext());
 
+        }
 
         public virtual DbSet<_User> User { get; set; }
         public virtual DbSet<Department> Department { get; set; }
