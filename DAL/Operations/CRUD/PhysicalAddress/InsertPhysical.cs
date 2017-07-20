@@ -10,7 +10,7 @@ namespace Operations.CRUD.PhysicalAddress
     {
 
 
-        public void Insert_PhysicalAddress(string streetLine1, string streetLine2, string streetLine3, int fkSuburbId, int fkUserId)
+        public static void Insert_PhysicalAddress(Physical_Address physical)
 
         {
             using (var objUsersDbContext = new UsersDbContext())
@@ -20,16 +20,16 @@ namespace Operations.CRUD.PhysicalAddress
                     var objPhysicalAddress = new Physical_Address
                     {
 
-                        StreetLine1 = streetLine1,
-                        StreetLine2 = streetLine2,
-                        StreetLine3 = streetLine3,
-                        FkSuburbId = fkSuburbId,
-                        FkUserId = fkUserId
+                        StreetLine1 = physical.StreetLine1,
+                        StreetLine2 = physical.StreetLine2,
+                        StreetLine3 = physical.StreetLine3,
+                        FkSuburbId = physical.FkSuburbId,
+                        FkUserId = physical.FkUserId
 
                     };
                     objUsersDbContext.PhysicalAddress.Add(objPhysicalAddress);
                     objUsersDbContext.SaveChanges();
-                    Console.WriteLine("An Physical Address for User Id " + fkUserId + " has beed added.");
+                    Console.WriteLine("An Physical Address for User Id " + physical.FkUserId + " has beed added.");
                     Console.ReadKey();
                 }
                 catch (Exception)
@@ -43,29 +43,28 @@ namespace Operations.CRUD.PhysicalAddress
 
         }
 
-        public void EnterPhysicalAddressDetails()
+        public void EnterPhysicalAddressDetails(Physical_Address physical)
         {
 
             Console.WriteLine("Please enter User-ID");
-            int fkUserId = Convert.ToInt32(Console.ReadLine());
+            physical.FkUserId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter StreetLine 1");
-            string streetLine1 = Console.ReadLine();
+            physical.StreetLine1 = Console.ReadLine();
 
             Console.WriteLine("Please enter StreetLine 2");
-            string streetLine2 = Console.ReadLine();
+            physical.StreetLine2 = Console.ReadLine();
 
             Console.WriteLine("Please enter StreetLine 3");
-            string streetLine3 = Console.ReadLine();
+            physical.StreetLine3 = Console.ReadLine();
 
             Console.WriteLine("Please enter Suburb-ID");
-            int fkSuburbId = Convert.ToInt32(Console.ReadLine());
+            physical.FkSuburbId = Convert.ToInt32(Console.ReadLine());
 
 
             Console.WriteLine("\r\n");
 
-            var objInsertPhysicalAddress = new InsertPhysical();
-            objInsertPhysicalAddress.Insert_PhysicalAddress(streetLine1, streetLine2, streetLine3, fkUserId, fkSuburbId);
+            Insert_PhysicalAddress(physical);
 
         }
 

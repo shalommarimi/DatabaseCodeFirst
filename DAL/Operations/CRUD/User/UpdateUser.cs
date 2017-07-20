@@ -1,12 +1,14 @@
 ﻿using DAL.DBContext;
+using DAL.Domain_Classes;
 using System;
+using System.Security.Cryptography;
 
 namespace Operations.CRUD.User
 {
     class UpdateUser
     {
 
-        public void UpdateUserDetails(int pkUserId, string userFirstname, string userMiddleName, string userLastName, string userEmailAddress, string userPassword, int userDeptId, int userGenderId, int usertypeId)
+        public static void UpdateUserDetails(_User user)
         {
             using (var updateUserContext = new UsersDbContext())
             {
@@ -14,18 +16,16 @@ namespace Operations.CRUD.User
                 {
 
 
-                    var objupdateUser = updateUserContext.User.Find(pkUserId);
+                    var objupdateUser = updateUserContext.User.Find(user.PkUserId);
 
-                    objupdateUser.PkUserId = pkUserId;
-
-                    objupdateUser.FirstName = userFirstname;
-                    objupdateUser.MiddleName = userMiddleName;
-                    objupdateUser.LastName = userLastName;
-                    objupdateUser.EmailAddress = userEmailAddress;
-                    objupdateUser.Password = userPassword;
-                   // objupdateUser.FkGenderId = userGenderId;
-                   // objupdateUser.FkDepartmentId = userDeptId;
-                  //  objupdateUser.FkUserTypeId = usertypeId;
+                    objupdateUser.FirstName = user.FirstName;
+                    objupdateUser.MiddleName = user.MiddleName;
+                    objupdateUser.LastName = user.LastName;
+                    objupdateUser.EmailAddress = user.EmailAddress;
+                    objupdateUser.Password = user.Password;
+                    objupdateUser.FkGenderId = user.FkGenderId;
+                    objupdateUser.FkDepartmentId = user.FkDepartmentId;
+                    objupdateUser.FkUserTypeId = user.FkUserTypeId;
 
                     updateUserContext.SaveChanges();
 
@@ -42,41 +42,60 @@ namespace Operations.CRUD.User
         }
 
 
-        public void EnterUpdateUserDetails()
+        public void EnterUpdateUserDetails(_User user)
         {
             Console.WriteLine("Enter UserId to Update");
-            int pkUserId = Convert.ToInt32(Console.ReadLine());
+            user.PkUserId = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter First Name");
-            string userFirstname = Console.ReadLine();
+            Console.WriteLine("Enter the First Name");
+            user.FirstName = Console.ReadLine();
 
-            Console.WriteLine("Enter Middle Name (Optional))");
-            string userMiddleName = Console.ReadLine();
+            Console.WriteLine("Enter the Middle Name(Optional)");
+            user.MiddleName = Console.ReadLine();
 
-            Console.WriteLine("Enter Last Name :");
-            string userLastName = Console.ReadLine();
+            Console.WriteLine("Enter the Last Name");
+            user.LastName = Console.ReadLine();
 
+            Console.WriteLine("Enter the Email Address:");
+            user.EmailAddress = Console.ReadLine();
 
-            Console.WriteLine("Enter Email Address:");
-            string userEmailAddress = Console.ReadLine();
-
-            Console.WriteLine("Enter Password");
-            string userPassword = Console.ReadLine();
-
-
-            Console.WriteLine("Enter Department ID");
-            string userDeptId = Console.ReadLine();
-
-            Console.WriteLine("Enter GenderId");
-            string userGenderId = Console.ReadLine();
-
-            Console.WriteLine("Enter the UserTypeId");
-            string usertypeId = Console.ReadLine();
-
-            var objUpdateUser = new UpdateUser();
-            objUpdateUser.UpdateUserDetails(pkUserId, userFirstname, userMiddleName, userLastName, userEmailAddress, userPassword, Convert.ToInt16(userDeptId), Convert.ToInt16(userGenderId), Convert.ToInt16(usertypeId));
+            Console.WriteLine("Enter your Password");
+            user.Password = Console.ReadLine();
 
 
+            Console.WriteLine("Enter Department ID, 1-GMIC, 2-GQUA, 3-GMOB");
+            user.FkDepartmentId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter  Gender ID 1-Male, 2-Female");
+            user.FkGenderId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter User Type Id, 1-Normal, 2-Admin");
+            user.FkUserTypeId = Convert.ToInt32(Console.ReadLine());
+
+            //Hashing the password with some salt
+            //Calling or Invoking the HashingPassword method and Passing the entered Password + default Salt
+            string salt = "Thisismydefaultsalt";
+            string hashedPassword = HashingPassword(user.Password + salt);
+
+            //calling  IUpdate_User method.
+
+            UpdateUserDetails(user);
+
+
+        }
+        public string HashingPassword(string input)
+        {
+            byte[] hash;
+            using (var sha1CryptoServiceProvider = new SHA1CryptoServiceProvider())
+            {
+                hash = sha1CryptoServiceProvider.ComputeHash(System.Text.Encoding.Unicode.GetBytes(input));
+            }
+            var stringBuilder = new System.Text.StringBuilder();
+
+            foreach (byte b in hash) stringBuilder.AppendFormat("{0:x2}", b);
+            {
+                return stringBuilder.ToString();
+            }
         }
 
 

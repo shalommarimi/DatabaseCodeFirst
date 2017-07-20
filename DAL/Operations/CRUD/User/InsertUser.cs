@@ -9,8 +9,7 @@ namespace Operations.CRUD.User
     class InsertUser
     {
 
-        public void Insert_User(string firstName, string middleName, string lastName, string email, string password, int fkDepartmentId, int fkGenderId, int fkUserTypeId)
-
+        public static void Insert_User(_User user)
         {
 
             using (var objUsersDbContext = new UsersDbContext())
@@ -26,14 +25,14 @@ namespace Operations.CRUD.User
                         IsDeleted = false,
                         IsApproved = false,
 
-                        FirstName = firstName,
-                        MiddleName = middleName,
-                        LastName = lastName,
-                        EmailAddress = email,
-                        Password = password,
-                        FkDepartmentId = fkDepartmentId,
-                        FkGenderId = fkGenderId,
-                        FkUserTypeId = fkUserTypeId
+                        FirstName = user.FirstName,
+                        MiddleName = user.MiddleName,
+                        LastName = user.LastName,
+                        EmailAddress = user.EmailAddress,
+                        Password = user.Password,
+                        FkDepartmentId = user.FkDepartmentId,
+                        FkGenderId = user.FkGenderId,
+                        FkUserTypeId = user.FkUserTypeId
 
                     };
 
@@ -54,7 +53,7 @@ namespace Operations.CRUD.User
                     Console.Clear();
 
                     var objInsertUser = new InsertUser();
-                    objInsertUser.EnterUserDetails();
+                    objInsertUser.EnterUserDetails(user);
                     Console.ReadKey();
                 }
             }
@@ -62,42 +61,40 @@ namespace Operations.CRUD.User
 
 
 
-        public void EnterUserDetails()
+        public void EnterUserDetails(_User user)
         {
             Console.WriteLine("Enter the First Name");
-            string firstName = Console.ReadLine();
+            user.FirstName = Console.ReadLine();
 
             Console.WriteLine("Enter the Middle Name(Optional)");
-            string middleName = Console.ReadLine();
+            user.MiddleName = Console.ReadLine();
 
             Console.WriteLine("Enter the Last Name");
-            string lastName = Console.ReadLine();
+            user.LastName = Console.ReadLine();
 
             Console.WriteLine("Enter the Email Address:");
-            string email = Console.ReadLine();
+            user.EmailAddress = Console.ReadLine();
 
             Console.WriteLine("Enter your Password");
-            string password = Console.ReadLine();
+            user.Password = Console.ReadLine();
 
 
             Console.WriteLine("Enter Department ID, 1-GMIC, 2-GQUA, 3-GMOB");
-            string fkDepartmentId = Console.ReadLine();
+            user.FkDepartmentId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter  Gender ID 1-Male, 2-Female");
-            string fkGenderId = Console.ReadLine();
+            user.FkGenderId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter User Type Id, 1-Normal, 2-Admin");
-            string fkUserTypeId = Console.ReadLine();
+            user.FkUserTypeId = Convert.ToInt32(Console.ReadLine());
 
             //Hashing the password with some salt
             //Calling or Invoking the HashingPassword method and Passing the entered Password + default Salt
             string salt = "Thisismydefaultsalt";
-            string hashedPassword = HashingPassword(password + salt);
+            string hashedPassword = HashingPassword(user.Password + salt);
 
-
-            var objInsertUser = new InsertUser();
-            objInsertUser.Insert_User(firstName, middleName, lastName, email, hashedPassword, Convert.ToInt16(fkDepartmentId), Convert.ToInt16(fkGenderId), Convert.ToInt16(fkUserTypeId));
-
+            //calling  Insert_User method.
+            Insert_User(user);
 
         }
 

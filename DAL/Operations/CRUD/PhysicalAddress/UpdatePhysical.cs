@@ -1,4 +1,5 @@
 ﻿using DAL.DBContext;
+using DAL.Domain_Classes;
 using System;
 using System.Linq;
 
@@ -7,19 +8,19 @@ namespace Operations.CRUD.PhysicalAddress
     class UpdatePhysical
     {
 
-        public void Update_Physical(string streetLine1, string streetLine2, string streetLine3, int fkSuburbId, int pkPhysicalId)
+        public static void Update_Physical(Physical_Address physical)
         {
             using (var usersDbContext = new UsersDbContext())
             {
                 try
                 {
-                    var objUpdatePhysical = usersDbContext.PhysicalAddress.SingleOrDefault(x => x.PkPhysicalAddessId == pkPhysicalId);
+                    var objUpdatePhysical = usersDbContext.PhysicalAddress.SingleOrDefault(x => x.PkPhysicalAddessId == physical.PkPhysicalAddessId);
 
-                    objUpdatePhysical.StreetLine1 = streetLine1;
-                    objUpdatePhysical.StreetLine2 = streetLine2;
-                    objUpdatePhysical.StreetLine3 = streetLine3;
+                    objUpdatePhysical.StreetLine1 = physical.StreetLine1;
+                    objUpdatePhysical.StreetLine2 = physical.StreetLine2;
+                    objUpdatePhysical.StreetLine3 = physical.StreetLine3;
 
-                    objUpdatePhysical.FkSuburbId = fkSuburbId;
+                    objUpdatePhysical.FkSuburbId = physical.FkSuburbId;
                     usersDbContext.SaveChanges();
                     Console.WriteLine("Physical Address Updated");
                     Console.ReadKey();
@@ -35,25 +36,26 @@ namespace Operations.CRUD.PhysicalAddress
 
         }
 
-        public void EnterPhysicalUpdateDetails()
+        public void EnterPhysicalUpdateDetails(Physical_Address physical)
         {
 
+
             Console.WriteLine("Please enter AddressId");
-            int pkPhysicalId = Convert.ToInt32(Console.ReadLine());
+            physical.PkPhysicalAddessId = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Please enter StreetLine1");
-            string streetLine1 = Console.ReadLine();
+            Console.WriteLine("Please enter StreetLine 1");
+            physical.StreetLine1 = Console.ReadLine();
 
-            Console.WriteLine("Please enter StreetLine2");
-            string streetLine2 = Console.ReadLine();
+            Console.WriteLine("Please enter StreetLine 2");
+            physical.StreetLine2 = Console.ReadLine();
 
-            Console.WriteLine("Please enter StreetLine3");
-            string streetLine3 = Console.ReadLine();
+            Console.WriteLine("Please enter StreetLine 3");
+            physical.StreetLine3 = Console.ReadLine();
 
-            Console.WriteLine("Please enter Suburb");
-            int fkSuburbId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter Suburb-ID");
+            physical.FkSuburbId = Convert.ToInt32(Console.ReadLine());
 
-            Update_Physical(streetLine1, streetLine2, streetLine3, fkSuburbId, pkPhysicalId);
+            Update_Physical(physical);
         }
     }
 }

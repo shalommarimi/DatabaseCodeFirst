@@ -1,4 +1,5 @@
-﻿using Operations.CRUD.PhysicalAddress;
+﻿using DAL.Domain_Classes;
+using Operations.CRUD.PhysicalAddress;
 using Operations.CRUD.PostalAddress;
 using Operations.CRUD.User;
 using System;
@@ -18,6 +19,13 @@ namespace Operations
             Console.WriteLine("User Deletion Operations: \r\n 8. Press 1 to Delete User");
 
 
+
+            //Object in use by 2---Methods as Parameter ,thats why is Glabol
+            var user = new _User();
+            var physical = new Physical_Address();
+            var postal = new Postal_Address();
+
+
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -27,16 +35,16 @@ namespace Operations
                     break;
                 case 1:
                     var objInsertUser = new InsertUser();
-                    objInsertUser.EnterUserDetails();
-                     
-                    
+                    objInsertUser.EnterUserDetails(user);
+
+
                     Console.WriteLine("would you like to add your physical address: Y/N");
                     string value = Console.ReadLine(); 
                     string lower = value.ToLower();
                     if (lower == "y") 
                     {
                         var objaddressOption = new InsertPhysical();
-                        objaddressOption.EnterPhysicalAddressDetails();
+                        objaddressOption.EnterPhysicalAddressDetails(physical);
                     }
                     else if (lower=="n")
                     {
@@ -46,25 +54,25 @@ namespace Operations
 
                 case 2:
                     var objUpdateUser = new UpdateUser();
-                    objUpdateUser.EnterUpdateUserDetails();
+                    objUpdateUser.EnterUpdateUserDetails(user);
                     break;
-                
+
                 case 3:
                     var objInsertPhysical = new InsertPhysical();
-                    objInsertPhysical.EnterPhysicalAddressDetails();
+                    objInsertPhysical.EnterPhysicalAddressDetails(physical);
                     break;
                 case 4:
                     var objUpdatePhysical = new UpdatePhysical();
-                    objUpdatePhysical.EnterPhysicalUpdateDetails();
+                    objUpdatePhysical.EnterPhysicalUpdateDetails(physical);
                     break;
-      
+
                 case 5:
                     var objInsertPostal = new InsertPostal();
-                    objInsertPostal.EnterPostalAddressDetails();
+                    objInsertPostal.EnterPostalAddressDetails(postal);
                     break;
                 case 6:
                     var objUpdatePostal = new UpdatePostal();
-                    objUpdatePostal.EnterPostalUpdateDetails();
+                    objUpdatePostal.EnterPostalUpdateDetails(postal);
                     break;
                 case 7:
                     var objUpdateApprovalStatus = new UpdateApprovalStatus();
@@ -79,7 +87,7 @@ namespace Operations
                     Console.WriteLine("Opps! Invalid option entered. Retry");
                     Console.ReadKey();
 
-                    
+
 
                     break;
             }

@@ -8,7 +8,7 @@ namespace Operations.CRUD.PostalAddress
     class InsertPostal
     {
 
-        public void Insert_PostalAddress(string addressLine1, string addressLine2, string addressLine3, int fkUserId, int fkSuburbId)
+        public static void Insert_PostalAddress(Postal_Address postal)
         {
 
             using (var objUsersDbContext = new UsersDbContext())
@@ -18,16 +18,16 @@ namespace Operations.CRUD.PostalAddress
                     var objPostalAddress = new Postal_Address
                     {
 
-                        AddressLine1 = addressLine1,
-                        AddressLine2 = addressLine2,
-                        AddressLine3 = addressLine3,
-                        FkSuburbId = fkSuburbId,
-                        FkUserId = fkUserId
+                        AddressLine1 = postal.AddressLine1,
+                        AddressLine2 = postal.AddressLine2,
+                        AddressLine3 = postal.AddressLine3,
+                        FkSuburbId = postal.FkSuburbId,
+                        FkUserId = postal.FkUserId
 
                     };
                     objUsersDbContext.PostalAddress.Add(objPostalAddress);
                     objUsersDbContext.SaveChanges();
-                    Console.WriteLine("An Postal Address for User Id " + fkUserId + " has beed added.");
+                    Console.WriteLine("An Postal Address for User Id " + postal.FkUserId + " has beed added.");
                     Console.ReadKey();
                 }
                 catch (Exception)
@@ -41,29 +41,29 @@ namespace Operations.CRUD.PostalAddress
 
 
         }
-        public void EnterPostalAddressDetails()
+
+        public void EnterPostalAddressDetails(Postal_Address postal)
         {
 
             Console.WriteLine("Please enter User-ID");
-            int fkUserId = Convert.ToInt32(Console.ReadLine());
+            postal.FkUserId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Please enter AddressLine 1");
-            string addressLine1 = Console.ReadLine();
+            postal.AddressLine1 = Console.ReadLine();
 
             Console.WriteLine("Please enter AddressLine 2");
-            string addressLine2 = Console.ReadLine();
+            postal.AddressLine2 = Console.ReadLine();
 
             Console.WriteLine("Please enter AddressLine 3");
-            string addressLine3 = Console.ReadLine();
+            postal.AddressLine3 = Console.ReadLine();
 
             Console.WriteLine("Please enter Suburb-ID");
-            int fkSuburbId = Convert.ToInt32(Console.ReadLine());
+            postal.FkSuburbId = Convert.ToInt32(Console.ReadLine());
 
 
             Console.WriteLine("\r\n");
 
-            var objInsertPostalAddress = new InsertPostal();
-            objInsertPostalAddress.Insert_PostalAddress(addressLine1, addressLine2, addressLine3, fkUserId, fkSuburbId);
+            Insert_PostalAddress(postal);
 
         }
     }
