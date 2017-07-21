@@ -37,16 +37,17 @@ namespace Operations
                     var objInsertUser = new InsertUser();
                     objInsertUser.EnterUserDetails(user);
 
-
                     Console.WriteLine("would you like to add your physical address: Y/N");
-                    string value = Console.ReadLine(); 
+
+                    string value = Console.ReadLine();
+
                     string lower = value.ToLower();
-                    if (lower == "y") 
+                    if (lower == "y")
                     {
                         var objaddressOption = new InsertPhysical();
                         objaddressOption.EnterPhysicalAddressDetails(physical);
                     }
-                    else if (lower=="n")
+                    else if (lower == "n")
                     {
                         Console.WriteLine("Thank you");
                     }
