@@ -28,6 +28,14 @@ namespace DAL.DBContext
                 context.Gender.Add(gen);
 
 
+            IList<UserType> usertypes = new List<UserType>();
+            usertypes.Add(new UserType() { UserTypeName = "Normal" });
+            usertypes.Add(new UserType() { UserTypeName = "Administrator" });
+
+            foreach (UserType ut in usertypes)
+                context.UserType.Add(ut);
+
+
             //Inserting Provinces
             IList<Province> provinces = new List<Province>();
             provinces.Add(new Province() { ProvinceName = "Gauteng" });
@@ -77,6 +85,28 @@ namespace DAL.DBContext
 
             foreach (Suburb sub in suburbs)
                 context.Suburb.Add(sub);
+
+
+            IList<PostalCode> postalcodes = new List<PostalCode>();
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "2109" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "1083" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "7892" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "0085" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "5421" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "1852" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "4012" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "2009" });
+            postalcodes.Add(new PostalCode() { PostalCodeNumber = "3656" });
+
+
+            foreach (PostalCode pc in postalcodes)
+                context.PostalCode.Add(pc);
+
+
+
+
+
+
 
 
 
