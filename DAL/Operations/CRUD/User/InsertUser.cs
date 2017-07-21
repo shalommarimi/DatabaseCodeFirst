@@ -9,6 +9,7 @@ namespace Operations.CRUD.User
     class InsertUser
     {
 
+
         public static void Insert_User(_User user)
         {
 
