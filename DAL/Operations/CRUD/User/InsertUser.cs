@@ -59,8 +59,6 @@ namespace Operations.CRUD.User
             }
         }
 
-
-
         public void EnterUserDetails(_User user)
         {
             Console.WriteLine("Enter the First Name");
@@ -77,7 +75,6 @@ namespace Operations.CRUD.User
 
             Console.WriteLine("Enter your Password");
             user.Password = Console.ReadLine();
-
 
             Console.WriteLine("Enter Department ID, 1-GMIC, 2-GQUA, 3-GMOB");
             user.FkDepartmentId = Convert.ToInt32(Console.ReadLine());
